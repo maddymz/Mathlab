@@ -1,9 +1,18 @@
 ## SER 515 Fall 2019 - Scratch Knockoff for Maths
-This project is inteded for coursework
+
+This project is inteded for coursework.
+
+### Description 
+
+This is a small project and the objective is to develop a working product to help youngsters learn to form valid math expressions, which is inspired from SCRATCH (https://scratch.mit.edu/) program that visually teaches programming to middle schoolers. - to help youngsters learn to form valid math expressions. 
+
 
 ## Technologies 
+
 ReactJS
+
 MaterialUI
+
 NodeJS
 
 ## Available Scripts 
@@ -45,8 +54,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Dev Team 
 Madhukar Raj
+
 Viraj Khatri
+
 Sajith Thattazhi
+
 Surya Cherukuri
+
 Bhavana Vakkalagadda
 
