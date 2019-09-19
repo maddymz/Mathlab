@@ -54,12 +54,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Dev Team 
 Madhukar Raj
-
 Viraj Khatri
-
 Sajith Thattazhi
-
 Surya Cherukuri
-
 Bhavana Vakkalagadda
 
