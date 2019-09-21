@@ -3,21 +3,23 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import './StudentMain.css';
 
 class StudentMain extends Component {
-	//constructor(props){
-	//	super(props);
-	//	this.state={
-	//		username:'',
-	//		password:''
-	//	}
-	//}
 	
 	render() {
 		return (
-			<div>
-				
+			<div className = "StudentMain">
+				<MuiThemeProvider>
+					<div>
+						<AppBar
+							title="Welcome Student"
+							color="Black"
+						/>
+					</div>
+				</MuiThemeProvider>
 			</div>
+			
 		);
 	}
 }
