@@ -7,6 +7,14 @@ import './StudentMain.css';
 
 class StudentMain extends Component {
 	
+	takeQuiz(event) {
+		return;
+	}
+	
+	practice(event) {
+		return;
+	}
+	
 	render() {
 		return (
 			<div className = "StudentMain">
@@ -16,6 +24,16 @@ class StudentMain extends Component {
 							title="Welcome Student"
 							color="Black"
 						/>
+						<br/>
+						<label>
+							Would you like to take the Quiz?  
+							<RaisedButton label="Take Quiz" primary={true} style={style} onClick={(event) => this.takeQuiz(event)}/>
+						</label>
+						<br/>
+						<label>
+							Would you like to Practice Expression Building?  
+							<RaisedButton label="Practice!" primary={true} style={style} onClick={(event) => this.practice(event)}/>
+						</label>
 					</div>
 				</MuiThemeProvider>
 			</div>
