@@ -17,8 +17,6 @@ render() {
              <RaisedButton label="Student" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
              <RaisedButton label="Professor" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
              <RaisedButton label="Quiz" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
-             <RaisedButton label="Add Student" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
-             <RaisedButton label="Add Professor" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
          </div>
          </MuiThemeProvider>
       </div>
