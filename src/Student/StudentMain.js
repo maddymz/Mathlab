@@ -3,16 +3,17 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import './StudentMain.css';
+import './Student.css';
+import {Link} from 'react-router-dom';
 
 class StudentMain extends Component {
-	
-	takeQuiz(event) {
-		return;
+
+	sendQuizMessage () {
+		this.props.setHeaderMessage("Lets take the quiz!");
 	}
-	
-	practice(event) {
-		return;
+
+	sendPracticeMessage () {
+		this.props.setHeaderMessage("Lets Practice!");
 	}
 	
 	render() {
@@ -20,20 +21,20 @@ class StudentMain extends Component {
 			<div className = "StudentMain">
 				<MuiThemeProvider>
 					<div>
-						<AppBar
-							title="Welcome Student"
-							color="Black"
-						/>
+						<label>
+							Would you like to take the Quiz?
+						</label>
+						<Link to = "/quiz" >
+								<RaisedButton label="Take Quiz" primary={true} style={style} onClick = {(event) => this.sendQuizMessage()}/>
+						</Link>
+						<br/>
 						<br/>
 						<label>
-							Would you like to take the Quiz?  
-							<RaisedButton label="Take Quiz" primary={true} style={style} onClick={(event) => this.takeQuiz(event)}/>
+							Would you like to Practice Expression Building?
 						</label>
-						<br/>
-						<label>
-							Would you like to Practice Expression Building?  
-							<RaisedButton label="Practice!" primary={true} style={style} onClick={(event) => this.practice(event)}/>
-						</label>
+						<Link to = "/practice" >
+								<RaisedButton label="Practice!" primary={true} style={style} onClick = {(event) => this.sendPracticeMessage()}/>
+						</Link>
 					</div>
 				</MuiThemeProvider>
 			</div>
