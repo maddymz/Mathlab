@@ -1,21 +1,18 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import {List, ListItem} from 'material-ui/List';
 import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 class Login extends Component {
-  constructor() {
-    super();
-    //const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    // this.state = {
-    //   dataSource: ds.cloneWithRows(['row 1', 'row 2']),
-    // };
-  }
-  
+
 render() {
   var styleList = {
       height: '150px',
+      width: '450px',
+       position: 'absolute', 
+        left: '50%', 
+        top: '20%',
+        transform: 'translate(-50%, 0%)',
       overflow: 'auto'
     };
     return (
