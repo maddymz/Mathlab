@@ -7,7 +7,9 @@ import './Student.css';
 import StudentMain from './StudentMain';
 import StudentQuiz from './StudentQuiz';
 import StudentPractice from './StudentPractice';
+import Loginscreen from '../Login/Loginscreen';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Student extends Component {
     constructor(props){
@@ -20,7 +22,7 @@ class Student extends Component {
     }
 
     logout = () => {
-        
+        this.setState({message: "Login"})
     }
     
 	render() {
@@ -30,7 +32,9 @@ class Student extends Component {
                         <MuiThemeProvider>
                             <div>
                                 <AppBar title = {this.state.message} color="Black">
-                                    <RaisedButton label="Logout" primary={true} style = {style} onClick = {(event) => this.logout()}/>
+                                        <Link to = "/login" >
+                                            <RaisedButton label="Logout" primary={true} style = {style} onClick = {(event) => this.logout()}/>  
+                                        </Link>
                                 </AppBar>
                             </div>
                             <Switch>
@@ -45,6 +49,10 @@ class Student extends Component {
                                 <Route 
                                     path = "/quiz" 
                                     component = {(props) => <StudentQuiz setHeaderMessage = {this.setMessage} />}  
+                                />
+                                <Route
+                                    path = "/login"
+                                    component = {(props) => <Loginscreen setHeaderMessage = {this.setMessage} />}
                                 />
                             </Switch>
                         </MuiThemeProvider>

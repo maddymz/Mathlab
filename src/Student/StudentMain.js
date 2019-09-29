@@ -25,7 +25,7 @@ class StudentMain extends Component {
 							Would you like to take the Quiz?
 						</label>
 						<Link to = "/quiz" >
-								<RaisedButton label="Take Quiz" primary={true} style={style} onClick = {(event) => this.sendQuizMessage()}/>
+							<RaisedButton label="Take Quiz" primary={true} style={style} onClick = {(event) => this.sendQuizMessage()}/>
 						</Link>
 						<br/>
 						<br/>
