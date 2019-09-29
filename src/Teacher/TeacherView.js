@@ -5,10 +5,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 
 class Teacher extends Component {
-
+    createQuiz(event){
+        return;
+    }
     render() {
-
-        const rightstyle = {float : "right"}
         const customStyle = {marginTop:"150px"}
     return (
         <div>
@@ -16,13 +16,13 @@ class Teacher extends Component {
                 <div>
                     <AppBar
                         title="Teacher"
-                        color="Black"
-                    />
-                    <RaisedButton label="LogOut" primary={true} style={rightstyle} onClick={(event) => this.handleClick(event)}/>
+                        color="Black">
+                        <RaisedButton  label="Logout" primary={true} onClick={(event) => this.createQuiz(event)}/>
 
+                    </AppBar>
                     <p style={customStyle}>Want to Create Quiz?</p>
                     <br/>
-                    <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+                    <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.createQuiz(event)}/>
                     <br/>
                 </div>
             </MuiThemeProvider>
