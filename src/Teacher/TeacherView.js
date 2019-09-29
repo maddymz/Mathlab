@@ -2,11 +2,15 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Link} from "react-router-dom";
 
 
 class Teacher extends Component {
     createQuiz(event){
         return;
+    }
+    sendMessage () {
+        this.props.setHeaderMessage("Lets Create the quiz!");
     }
     render() {
         const customStyle = {marginTop:"150px"}
@@ -22,7 +26,8 @@ class Teacher extends Component {
                     </AppBar>
                     <p style={customStyle}>Want to Create Quiz?</p>
                     <br/>
-                    <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.createQuiz(event)}/>
+                    <Link to = "/quiz" >
+                        <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.sendMessage()}/>                    </Link>
                     <br/>
                 </div>
             </MuiThemeProvider>
