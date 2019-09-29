@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Loginscreen from './Login/Loginscreen';
-
+import TeacherView from './Teacher/TeacherView';
 class App extends Component {
   constructor(props){
     super(props);
@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.loginPage}
+        <TeacherView/>
       </div>
     );
   }
