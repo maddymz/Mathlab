@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import Student from '../Student/Student'
 
 // Login Component
 class Login extends Component {
@@ -22,6 +23,7 @@ class Login extends Component {
     if (usernameRegex.test(username)) {
       if (passwordRegex.test(password)) {
         alert("Welcome " + username)
+``
       } else {
         alert("Issue with password. Length should be between 8-30 containing alphabets and numbers.")
       }
