@@ -3,10 +3,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import Student from '../Student/Student'
 
 // Login Component
 class Login extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -19,11 +19,11 @@ class Login extends Component {
     var username = this.state.username
     var password = this.state.password
     var usernameRegex = /^[a-zA-Z ]{2,30}$/;
-    var passwordRegex = /^[a-zA-Z1-9]{8,20}$/;
+    var passwordRegex = /^[a-zA-Z1-9]{8,20}$/; 
     if (usernameRegex.test(username)) {
       if (passwordRegex.test(password)) {
         alert("Welcome " + username)
-``
+        this.props.history.push('/Student')
       } else {
         alert("Issue with password. Length should be between 8-30 containing alphabets and numbers.")
       }
