@@ -9,7 +9,8 @@ import {Link} from 'react-router-dom';
 class StudentQuiz extends Component {
 	
 	sendMessage () {
-		this.props.setHeaderMessage("Welcome Student");
+		// this.props.setHeaderMessage("Welcome Student");
+		this.props.history.push('/student')
 	}
 
 	render() {
@@ -17,9 +18,7 @@ class StudentQuiz extends Component {
 			<div className = "StudentQuiz">
 				<MuiThemeProvider>
 					<div>
-						<Link to = "/" >
 							<RaisedButton label="Back" primary={true} style={style} onClick = {(event) => this.sendMessage()}/>
-						</Link>
 					</div>
 				</MuiThemeProvider>
 			</div>
