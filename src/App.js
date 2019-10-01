@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Loginscreen from './Login/Loginscreen';
+import TeacherView from './Teacher/TeacherView';
 class App extends Component {
   constructor(props){
     super(props);
@@ -15,7 +16,13 @@ class App extends Component {
                   loginPage:loginPage
                     })
   }
-
+  render() {
+    return (
+        <div className="App">
+          {this.state.loginPage}
+        </div>
+    );
+  }
 }
 
 export default App;
