@@ -6,6 +6,9 @@
 .pnp.js
 .vscode
 
+# IDE specific files
+.idea/
+
 # testing
 /coverage
 
