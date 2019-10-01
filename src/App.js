@@ -14,17 +14,6 @@ import StudentPractice from './Student/StudentPractice';
 class App extends Component {
   render() {
     return (
-
-        <BrowserRouter>
-          <div className="App">
-            <Route exact path='/' component={Login} />
-            <Route path='/Student' component={Student} />
-            <Route exact path='/TeacherView' component={TeacherView} />
-            <Route exact path='/TeacherQuiz' component={CreateQuiz} />
-          </div>
-        </BrowserRouter>
-
-
       <BrowserRouter>
         <div className="App">
           <Header />
@@ -36,7 +25,6 @@ class App extends Component {
           </Switch>
         </div>
       </BrowserRouter>
-
     );
   }
 }
