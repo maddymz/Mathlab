@@ -1,26 +1,30 @@
+import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import Header from './Compnents/Header'
 import React, { Component } from 'react';
-import './App.css';
-import Loginscreen from './Login/Loginscreen';
+import Login from './Login/Loginscreen'
+import Student from './Student/Student'
+import CreateQuiz from './Teacher/CreateQuiz';
+import TeacherView from './Teacher/TeacherView';
+import StudentMain from './Student/StudentMain';
+import StudentQuiz from './Student/StudentQuiz';
+import StudentPractice from './Student/StudentPractice';
+
+
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      loginPage:[]
-    }
-  }
-  componentDidMount(){
-    var loginPage =[];
-    loginPage.push(<Loginscreen parentContext={this}/>);
-    this.setState({
-                  loginPage:loginPage
-                    })
-  }
   render() {
     return (
-      <div className="App">
-        {this.state.loginPage}
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path='/' component={Login} />
+            <Route path="/student" exact component={StudentMain} />
+            <Route path="/student/practice" component={StudentPractice} />
+            <Route path="/student/quiz" component={StudentQuiz} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
