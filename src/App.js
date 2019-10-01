@@ -1,14 +1,30 @@
-import React, { Component } from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Header from './Compnents/Header'
+import React, { Component } from 'react';
 import Login from './Login/Loginscreen'
+import Student from './Student/Student'
+import CreateQuiz from './Teacher/CreateQuiz';
+import TeacherView from './Teacher/TeacherView';
 import StudentMain from './Student/StudentMain';
 import StudentQuiz from './Student/StudentQuiz';
 import StudentPractice from './Student/StudentPractice';
 
+
+
 class App extends Component {
   render() {
     return (
+
+        <BrowserRouter>
+          <div className="App">
+            <Route exact path='/' component={Login} />
+            <Route path='/Student' component={Student} />
+            <Route exact path='/TeacherView' component={TeacherView} />
+            <Route exact path='/TeacherQuiz' component={CreateQuiz} />
+          </div>
+        </BrowserRouter>
+
+
       <BrowserRouter>
         <div className="App">
           <Header />
@@ -20,6 +36,7 @@ class App extends Component {
           </Switch>
         </div>
       </BrowserRouter>
+
     );
   }
 }
