@@ -1,19 +1,13 @@
-
-
-
-
+import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import Header from './Compnents/Header'
 import React, { Component } from 'react';
-
-import { Route, BrowserRouter } from 'react-router-dom'
 import Login from './Login/Loginscreen'
 import Student from './Student/Student'
 import CreateQuiz from './Teacher/CreateQuiz';
 import TeacherView from './Teacher/TeacherView';
-
-
-import { Route, BrowserRouter } from 'react-router-dom'
-import Login from './Login/Loginscreen'
-import Student from './Student/Student'
+import StudentMain from './Student/StudentMain';
+import StudentQuiz from './Student/StudentQuiz';
+import StudentPractice from './Student/StudentPractice';
 
 
 
@@ -33,8 +27,13 @@ class App extends Component {
 
       <BrowserRouter>
         <div className="App">
-          <Route exact path='/' component={Login} />
-          <Route path='/Student' component={Student} />
+          <Header />
+          <Switch>
+            <Route exact path='/' component={Login} />
+            <Route path="/student" exact component={StudentMain} />
+            <Route path="/student/practice" component={StudentPractice} />
+            <Route path="/student/quiz" component={StudentQuiz} />
+          </Switch>
         </div>
       </BrowserRouter>
 

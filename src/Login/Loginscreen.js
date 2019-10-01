@@ -23,8 +23,7 @@ class Login extends Component {
     var passwordRegex = /^[a-zA-Z1-9]{8,20}$/; 
     if (usernameRegex.test(username)) {
       if (passwordRegex.test(password)) {
-        alert("Welcome " + username)
-        this.props.history.push('/Student')
+        this.props.history.push('/student')
       } else {
         alert("Issue with password. Length should be between 8-30 containing alphabets and numbers.")
       }
@@ -38,10 +37,6 @@ class Login extends Component {
       <div>
         <MuiThemeProvider>
           <div className = 'Login'>
-            <AppBar
-              title="Login"
-              color="Black"
-            />
             <TextField
               hintText="Enter your Username"
               floatingLabelText="Username"
