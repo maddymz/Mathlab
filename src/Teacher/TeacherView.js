@@ -9,6 +9,9 @@ class Teacher extends Component {
     createQuiz(event){
         return;
     }
+    logout(event){
+        return;
+    }
     sendMessage () {
         this.props.setHeaderMessage("Lets Create the quiz!");
     }
@@ -21,7 +24,7 @@ class Teacher extends Component {
                     <AppBar
                         title="Teacher"
                         color="Black">
-                        <RaisedButton  label="Logout" primary={true} onClick={(event) => this.createQuiz(event)}/>
+                        <RaisedButton  label="Logout" primary={true} onClick={(event) => this.logout(event)}/>
 
                     </AppBar>
                     <p style={customStyle}>Want to Create Quiz?</p>
