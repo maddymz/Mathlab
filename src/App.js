@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
-import Loginscreen from './Login/Loginscreen';
+import { Route, BrowserRouter } from 'react-router-dom'
+import Login from './Login/Loginscreen'
+import Student from './Student/Student'
+import CreateQuiz from './Teacher/CreateQuiz';
 import TeacherView from './Teacher/TeacherView';
+
+
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      loginPage:[]
-    }
-  }
-  componentDidMount(){
-    var loginPage =[];
-    loginPage.push(<Loginscreen parentContext={this}/>);
-    this.setState({
-                  loginPage:loginPage
-                    })
-  }
   render() {
     return (
-        <div className="App">
-          {this.state.loginPage}
-        </div>
+        <BrowserRouter>
+          <div className="App">
+            <Route exact path='/' component={Login} />
+            <Route path='/Student' component={Student} />
+            <Route exact path='/TeacherView' component={TeacherView} />
+            <Route exact path='/TeacherQuiz' component={CreateQuiz} />
+          </div>
+        </BrowserRouter>
     );
   }
 }

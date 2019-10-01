@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import './Student.css';
+import './Teacher.css';
 import {Link} from 'react-router-dom';
 
 class CreateQuiz extends Component {
