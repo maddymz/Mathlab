@@ -18,6 +18,10 @@ class Student extends Component {
     setMessage = (childData) => {
         this.setState({message: childData})
     }
+
+    logout = () => {
+        
+    }
     
 	render() {
 			return (
@@ -25,10 +29,9 @@ class Student extends Component {
                     <div className = "Student">
                         <MuiThemeProvider>
                             <div>
-                                <AppBar
-                                    title = {this.state.message}
-                                    color="Black"
-                                />
+                                <AppBar title = {this.state.message} color="Black">
+                                    <RaisedButton label="Logout" primary={true} style = {style} onClick = {(event) => this.logout()}/>
+                                </AppBar>
                             </div>
                             <Switch>
                                 <Route 
