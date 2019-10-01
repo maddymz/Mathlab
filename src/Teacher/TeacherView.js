@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from "react-router-dom";
 
 
-class Teacher extends Component {
+class TeacherView extends Component {
     createQuiz(event){
         return;
     }
@@ -24,7 +24,7 @@ class Teacher extends Component {
                     <AppBar
                         title="Teacher"
                         color="Black">
-                        <RaisedButton  label="Logout" primary={true} onClick={(event) => this.logout(event)}/>
+                        <RaisedButton  label="Logout" primary={true} style={style} onClick={(event) => this.logout(event)}/>
 
                     </AppBar>
                     <p style={customStyle}>Want to Create Quiz?</p>
@@ -41,4 +41,4 @@ class Teacher extends Component {
 const style = {
     margin: 15,
 };
-export default Teacher;
+export default TeacherView;
