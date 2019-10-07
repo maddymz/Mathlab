@@ -16,7 +16,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Header />
           <Switch>
             <Route exact path='/' component={Login} />
             <Route path="/student" exact component={StudentMain} />

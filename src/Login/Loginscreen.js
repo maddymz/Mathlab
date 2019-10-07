@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import './LoginScreen.css';
+import Header from '../Compnents/Header'
 
 // Login Component
 class Login extends Component {
@@ -23,7 +24,7 @@ class Login extends Component {
     var passwordRegex = /^[a-zA-Z1-9]{8,20}$/; 
     if (usernameRegex.test(username)) {
       if (passwordRegex.test(password)) {
-        this.props.history.push('/student')
+        this.props.history.push('/student', this.state)
       } else {
         alert("Issue with password. Length should be between 8-30 containing alphabets and numbers.")
       }
@@ -37,6 +38,7 @@ class Login extends Component {
       <div>
         <MuiThemeProvider>
           <div className = 'Login'>
+            <Header message = "Login"/>
             <TextField
               hintText="Enter your Username"
               floatingLabelText="Username"
