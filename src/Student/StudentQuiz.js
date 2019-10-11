@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import Paper from 'material-ui/Paper';
 import './Student.css';
-import { Link } from 'react-router-dom';
 import Header from '../Compnents/Header';
 
 class StudentQuiz extends Component {
@@ -22,6 +20,10 @@ class StudentQuiz extends Component {
 		this.props.history.push('/student', this.state)
 	}
 
+	submitQuiz() {
+		//TODO: Handle this case.
+	}
+
 	render() {
 		return (
 			<div className="StudentQuiz">
@@ -30,6 +32,12 @@ class StudentQuiz extends Component {
 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
 					</div>
 					<div>
+						<Paper style = {style}>
+							This is where the quiz will go.
+						</Paper>
+					</div>
+					<div>
+						<RaisedButton label="Submit Quiz" primary={true} style={style} onClick={(event) => this.submitQuiz()} />
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
 					</div>
 				</MuiThemeProvider>
