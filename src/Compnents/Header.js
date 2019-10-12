@@ -21,10 +21,10 @@ class Header extends Component {
         return (
             <div className="Header">
                 <MuiThemeProvider>
-                    <AppBar title={this.state.message} color="Black">
+                    {/* <AppBar title={this.state.message} color="Black">
                         {this.state.showLogoutButton && 
                         <RaisedButton label="Logout" primary={true} style={style} onClick={(event) => this.logout()} /> }
-                    </AppBar>
+                    </AppBar> */}
                 </MuiThemeProvider>
             </div>
         );
