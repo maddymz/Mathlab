@@ -1,15 +1,9 @@
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
-import Header from './Components/Header/Header'
 import React, { Component } from 'react';
-import Login from './Components/Login/Loginscreen'
-import Student from './Components/Student/Student'
-import CreateQuiz from './Components/Teacher/CreateQuiz';
-import TeacherView from './Components/Teacher/TeacherView';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './Components/Login/Loginscreen';
 import StudentMain from './Components/Student/StudentMain';
-import StudentQuiz from './Components/Student/StudentQuiz';
 import StudentPractice from './Components/Student/StudentPractice';
-
-
+import StudentQuiz from './Components/Student/StudentQuiz';
 
 class App extends Component {
   render() {

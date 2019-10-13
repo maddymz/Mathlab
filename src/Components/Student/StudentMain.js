@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React, { Component } from 'react';
+import Header from '../Header/Header';
 import './Student.css';
-import { Link } from 'react-router-dom';
-import Header from '../Header/Header'
 
 class StudentMain extends Component {
 	constructor(props) {

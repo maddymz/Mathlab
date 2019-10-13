@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-import './Student.css';
-import { Link } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React, { Component } from 'react';
 import Header from '../Header/Header';
+import './Student.css';
 
 class StudentQuiz extends Component {
 

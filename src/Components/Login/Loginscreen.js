@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
+import React, { Component } from 'react';
+import Header from '../Header/Header';
 import './LoginScreen.css';
-import Header from '../Header/Header'
 
 // Login Component
 class Login extends Component {
