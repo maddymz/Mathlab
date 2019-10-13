@@ -1,13 +1,13 @@
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
-import Header from './Compnents/Header'
+import Header from './Components/Header/Header'
 import React, { Component } from 'react';
-import Login from './Login/Loginscreen'
-import Student from './Student/Student'
-import CreateQuiz from './Teacher/CreateQuiz';
-import TeacherView from './Teacher/TeacherView';
-import StudentMain from './Student/StudentMain';
-import StudentQuiz from './Student/StudentQuiz';
-import StudentPractice from './Student/StudentPractice';
+import Login from './Components/Login/Loginscreen'
+import Student from './Components/Student/Student'
+import CreateQuiz from './Components/Teacher/CreateQuiz';
+import TeacherView from './Components/Teacher/TeacherView';
+import StudentMain from './Components/Student/StudentMain';
+import StudentQuiz from './Components/Student/StudentQuiz';
+import StudentPractice from './Components/Student/StudentPractice';
 
 
 

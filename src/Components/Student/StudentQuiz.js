@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import './Student.css';
 import { Link } from 'react-router-dom';
-import Header from '../Compnents/Header';
+import Header from '../Header/Header';
 
 class StudentQuiz extends Component {
 

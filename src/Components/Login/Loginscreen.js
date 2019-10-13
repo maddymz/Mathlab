@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import './LoginScreen.css';
-import Header from '../Compnents/Header'
+import Header from '../Header/Header'
 
 // Login Component
 class Login extends Component {
