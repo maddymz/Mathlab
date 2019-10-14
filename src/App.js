@@ -4,6 +4,7 @@ import Login from './Components/Login/Loginscreen';
 import StudentMain from './Components/Student/StudentMain';
 import StudentPractice from './Components/Student/StudentPractice';
 import StudentQuiz from './Components/Student/StudentQuiz';
+import TeacherView from './Components/Teacher/TeacherView'
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <Route path="/student" exact component={StudentMain} />
             <Route path="/student/practice" component={StudentPractice} />
             <Route path="/student/quiz" component={StudentQuiz} />
+            <Route path="/teacher" component={TeacherView} />
           </Switch>
         </div>
       </BrowserRouter>

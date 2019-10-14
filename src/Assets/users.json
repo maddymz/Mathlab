@@ -1,0 +1,20 @@
+[
+    {
+        "username": "vkhatri2",
+        "name": "Viraj Khatri",
+        "password": "virajkhatri",
+        "role": "student"
+    },
+    {
+        "username": "mjfindler",
+        "name": "Michael Findler",
+        "password": "michaelfindler",
+        "role": "teacher"
+    },
+    {
+        "username": "admin",
+        "name": "Admin",
+        "password": "admin123",
+        "type": "admin"
+    }
+]

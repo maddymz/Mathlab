@@ -7,10 +7,10 @@ import './Student.css';
 class StudentMain extends Component {
 	constructor(props) {
 		super(props);
-		var headerMessage = "Welcome " + this.props.location.state.username;
+		var headerMessage = "Welcome " + this.props.location.state;
 		this.state = {
 			message: headerMessage,
-			username: this.props.location.state.username
+			username: this.props.location.state
 		}
 	}
 
