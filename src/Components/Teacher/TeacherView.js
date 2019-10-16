@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 
 class TeacherView extends Component {
+   
     createQuiz(event){
         return;
     }
@@ -13,7 +14,14 @@ class TeacherView extends Component {
         return;
     }
     sendMessage () {
-        this.props.setHeaderMessage("Lets Create the quiz!");
+        // this.props.setHeaderMessage("Lets Create the quiz!");
+        this.props.history.push("/quiz")
+    }
+
+    constructor(props){
+        super(props)
+        console.log(props);
+        
     }
     render() {
         const customStyle = {marginTop:"150px"}
@@ -29,8 +37,9 @@ class TeacherView extends Component {
                     </AppBar>
                     <p style={customStyle}>Want to Create Quiz?</p>
                     <br/>
-                    <Link to = "/quiz" >
-                        <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.sendMessage()}/>                    </Link>
+                    {/* <Link to = "/quiz" > */}
+                        <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.sendMessage()}/>   
+                                         {/* </Link> */}
                     <br/>
                 </div>
             </MuiThemeProvider>
