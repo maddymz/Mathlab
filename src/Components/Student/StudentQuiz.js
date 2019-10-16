@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React, { Component } from 'react';
+import Header from '../Header/Header';
 import './Student.css';
-import { Link } from 'react-router-dom';
-import Header from '../Compnents/Header'
 
-class StudentPractice extends Component {
+class StudentQuiz extends Component {
+
 	constructor(props) {
 		super(props);
-		var headerMessage = "Let's Practice";
+		var headerMessage = "Let's take the quiz";
 		this.state = {
 			message: headerMessage,
 			username: this.props.location.state.username
@@ -23,7 +21,7 @@ class StudentPractice extends Component {
 
 	render() {
 		return (
-			<div className="StudentPractice">
+			<div className="StudentQuiz">
 				<MuiThemeProvider>
 					<div>
 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
@@ -42,4 +40,4 @@ const style = {
 	margin: 15,
 };
 
-export default StudentPractice;
+export default StudentQuiz;
