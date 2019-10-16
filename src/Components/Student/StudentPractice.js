@@ -1,7 +1,7 @@
-import RaisedButton from 'material-ui/RaisedButton';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, { Component } from 'react';
-import Header from '../Header/Header';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
 import './Student.css';
 
 class StudentPractice extends Component {
@@ -24,6 +24,11 @@ class StudentPractice extends Component {
 				<MuiThemeProvider>
 					<div>
 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
+					</div>
+					<div>
+						<Paper style={style}>
+							This is where the practice section goes.
+						</Paper>
 					</div>
 					<div>
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
