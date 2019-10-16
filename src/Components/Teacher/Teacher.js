@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import 'Teacher.css';
-import TeacherView from 'TeacherView';
-import CreateQuiz from 'CreateQuiz';
+import './Teacher.css';
+import TeacherView from './TeacherView';
+import CreateQuiz from './CreateQuiz';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
@@ -22,12 +22,12 @@ class Teacher extends Component {
             <Router>
                 <div className = "Teacher">
                     <MuiThemeProvider>
-                        <div>
+                        {/* <div>
                             <AppBar
                                 title = {this.state.message}
                                 color="Black"
                             />
-                        </div>
+                        </div> */}
                         <Switch>
                             <Route
                                 path = "/" exact
