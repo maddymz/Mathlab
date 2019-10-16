@@ -1,4 +1,5 @@
 import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, { Component } from 'react';
 import Header from '../Header/Header';
@@ -15,6 +16,10 @@ class StudentQuiz extends Component {
 		}
 	}
 
+	submitQuiz() {
+		//TODO: Handle this case.
+	}
+
 	goBackToStudent() {
 		this.props.history.push('/student', this.state)
 	}
@@ -27,6 +32,12 @@ class StudentQuiz extends Component {
 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
 					</div>
 					<div>
+						<Paper style={style}>
+							This is where the quiz will go.
+						</Paper>
+					</div>
+					<div>
+						<RaisedButton label="Submit Quiz" primary={true} style={style} onClick={(event) => this.submitQuiz()} />
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
 					</div>
 				</MuiThemeProvider>
