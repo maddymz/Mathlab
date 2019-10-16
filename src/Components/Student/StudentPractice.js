@@ -1,8 +1,7 @@
-import RaisedButton from 'material-ui/RaisedButton';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Paper from 'material-ui/Paper';
 import React, { Component } from 'react';
-import Header from '../Header/Header';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
 import './Student.css';
 
 class StudentPractice extends Component {

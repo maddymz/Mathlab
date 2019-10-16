@@ -1,9 +1,9 @@
+import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import React, { Component } from 'react';
-import Header from '../Header/Header';
 import './Student.css';
+import Header from '../Compnents/Header';
 
 class StudentQuiz extends Component {
 
@@ -16,12 +16,12 @@ class StudentQuiz extends Component {
 		}
 	}
 
-	submitQuiz() {
-		//TODO: Handle this case.
-	}
-
 	goBackToStudent() {
 		this.props.history.push('/student', this.state)
+	}
+
+	submitQuiz() {
+		//TODO: Handle this case.
 	}
 
 	render() {
