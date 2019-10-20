@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { DndProvider} from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import './Student.css';
 import Header from '../Header/Header';
+import DragnDrop from '../DragnDrop/dragndrop';
 
 class StudentPractice extends Component {
 	constructor(props) {
@@ -19,6 +23,7 @@ class StudentPractice extends Component {
 		this.props.history.push('/student', this.state)
 	}
 
+	
 	render() {
 		return (
 			<div className="StudentPractice">
@@ -28,8 +33,14 @@ class StudentPractice extends Component {
 					</div>
 					<div>
 						<Paper style={style}>
-							This is where the practice section goes.
+						<div className="drag-n-drop">
+							<DndProvider backend={HTML5Backend}>
+								<DragnDrop/>
+							</DndProvider>
+						</div>
 						</Paper>
+
+						
 					</div>
 					<div>
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
