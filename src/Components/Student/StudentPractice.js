@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import './Student.css';
+import Header from '../Header/Header';
 
 class StudentPractice extends Component {
 	constructor(props) {

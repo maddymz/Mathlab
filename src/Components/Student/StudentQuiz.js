@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import './Student.css';
-import Header from '../Compnents/Header';
+import Header from '../Header/Header';
 
 class StudentQuiz extends Component {
 
