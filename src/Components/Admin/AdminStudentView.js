@@ -1,14 +1,36 @@
 import React, {Component} from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import myData from './studentList';
-import {List, ListItem} from 'material-ui/List';
-import RaisedButton from 'material-ui/RaisedButton';
+ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+ import AppBar from 'material-ui/AppBar';
+ import myData from './studentList';
+// import {List, ListItem} from 'material-ui/List';
+ import RaisedButton from 'material-ui/RaisedButton';
+
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  inline: {
+    display: 'inline',
+  },
+}));
+
 class Login extends Component {
 
 render() {
   var styleList = {
-      height: '150px',
+      height: '350px',
       width: '450px',
       position: 'absolute', 
       left: '50%', 
@@ -22,8 +44,12 @@ render() {
     const items = [];
 
     for (const [index, value] of elements.entries()) {
-      items.push(<ListItem primaryText={value}/>)
+      items.push(value)
     }
+    var namesList = items.map(function(name){
+      return (<li>{name}</li>); 
+    })
+    //const classes = useStyles();
     return (
       <div>
         <MuiThemeProvider>
@@ -33,7 +59,34 @@ render() {
              color="Black"
             />
             <List style={styleList}>
-              {items}
+            {items.map((name, key) => {
+            return (
+              <ListItem alignItems="flex-start">
+                <ListItemAvatar>
+                  <Avatar alt="Findler" src={require('./Findler.jpg')}/>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={name}
+                  secondary={
+                    <React.Fragment>
+                      <Typography
+                        component="span"
+                        variant="body2"
+                        
+                        color="textPrimary"
+                      >
+                        Software Engineering
+                      </Typography>
+                      <br></br>
+                      {" - Michael.Findler@asu.edu"}
+                    </React.Fragment>
+                  }
+                />
+                
+              </ListItem>
+             // <Divider variant="inset" component="li" />
+            )
+            })}
             </List>
             <RaisedButton label="Add Student" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
             <RaisedButton label="Delete Student" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
