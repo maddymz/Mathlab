@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { DndProvider} from 'react-dnd';
+import { DndProvider } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
@@ -20,10 +19,10 @@ class StudentPractice extends Component {
 	}
 
 	goBackToStudent() {
-		this.props.history.push('/student', this.state)
+		this.props.history.push('/student', this.state.username)
 	}
 
-	
+
 	render() {
 		return (
 			<div className="StudentPractice">
@@ -33,14 +32,12 @@ class StudentPractice extends Component {
 					</div>
 					<div>
 						<Paper style={style}>
-						<div className="drag-n-drop">
-							<DndProvider backend={HTML5Backend}>
-								<DragnDrop/>
-							</DndProvider>
-						</div>
+							<div className="drag-n-drop">
+								<DndProvider backend={HTML5Backend}>
+									<DragnDrop />
+								</DndProvider>
+							</div>
 						</Paper>
-
-						
 					</div>
 					<div>
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />

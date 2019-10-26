@@ -13,13 +13,13 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Switch>
-            <Route exact path='/' component={Login} />
+            <Route exact path='/' exact component={Login} />
             <Route path="/student" exact component={StudentMain} />
-            <Route path="/student/practice" component={StudentPractice} />
-            <Route path="/student/quiz" component={StudentQuiz} />
-            <Route path="/teacher" component={TeacherView} />
-            <Route path='/quiz' component={CreateQuiz}/>
-            <Route path='/teacher/startquiz' component={StartQuiz}/>
+            <Route path="/student/practice" exact component={StudentPractice} />
+            <Route path="/student/quiz" exact component={StudentQuiz} />
+            <Route path="/teacher" exact component={TeacherView} />
+            <Route path='/quiz' exact component={CreateQuiz} />
+            <Route path='/teacher/startquiz' exact component={StartQuiz} />
           </Switch>
         </div>
       </BrowserRouter>
