@@ -38,6 +38,10 @@ class StartQuiz extends Component{
                         <RaisedButton label="Quit" primary={true} style={style} onClick = {(event) => this.sendMessage()}/>
                         
                     </Link>
+                    <Link to = "/" >
+                        <RaisedButton label="Add" primary={true} style={style} onClick = {(event) => this.sendMessage()}/>
+                        
+                    </Link>
                 </div>
             </MuiThemeProvider>
         </div>
