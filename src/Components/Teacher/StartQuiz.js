@@ -5,7 +5,7 @@ import style from 'material-ui/styles';
 import './Teacher.css';
 import {Link} from 'react-router-dom';
 import './Teacher.css';
-import '../Header/Header';
+import Header from '../Header/Header';
 
 class StartQuiz extends Component{
     constructor(props) {
@@ -27,21 +27,25 @@ class StartQuiz extends Component{
 
             <div className = "StartQuiz">
             <MuiThemeProvider>
+            <div>
+						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
+					</div>
                 <div>
                     <p>1. How much is the addition of 2 and 3 numbers?</p>
                     <p>2.Multiply 2 and 3 numbers.</p>
                     <p>3.Add 2,3,4and 5 numbers.</p>
                     <p>4.Divide 10 and 5.</p>
                     <p>5.Subtract 21from 35 and add 45 to it.</p>
-
+                <label>
                 <Link to = "/" >
                         <RaisedButton label="Quit" primary={true} style={style} onClick = {(event) => this.sendMessage()}/>
-                        
                     </Link>
+                </label>
+                <label>
                     <Link to = "/" >
                         <RaisedButton label="Add" primary={true} style={style} onClick = {(event) => this.sendMessage()}/>
-                        
-                    </Link>
+                     </Link>
+                </label>
                 </div>
             </MuiThemeProvider>
         </div>

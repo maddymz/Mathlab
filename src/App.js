@@ -17,9 +17,9 @@ class App extends Component {
             <Route path="/student" exact component={StudentMain} />
             <Route path="/student/practice" component={StudentPractice} />
             <Route path="/student/quiz" component={StudentQuiz} />
-            <Route path="/teacher" component={TeacherView} />
+            <Route exact path="/teacher" component={TeacherView} />
             <Route path='/quiz' component={CreateQuiz}/>
-            <Route path='/teacher/startquiz' component={StartQuiz}/>
+            <Route exact path='/teacher/startquiz' component={StartQuiz}/>
           </Switch>
         </div>
       </BrowserRouter>

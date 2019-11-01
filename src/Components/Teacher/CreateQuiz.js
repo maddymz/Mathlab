@@ -36,6 +36,7 @@ class CreateQuiz extends Component {
         console.log(" inside start quiz functions !!");
         
         this.props.history.push('/teacher/startquiz', this.state)
+        
 		//this.props.push('./Teacher/StartQuiz', this.state)
 	}
   
