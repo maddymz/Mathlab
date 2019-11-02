@@ -19,6 +19,13 @@ class StartQuiz extends Component{
 		//	username: this.props.location.state.username
 		}
     }
+    LoginPage() {
+        console.log(" inside start quiz functions !!");
+        
+        this.props.history.push('/Login/LoginScreen', this.state)
+        
+		//this.props.push('./Teacher/StartQuiz', this.state)
+	}
     sendMessage () {
         this.props.setHeaderMessage("Lets start the quiz!");
     }
@@ -38,7 +45,7 @@ class StartQuiz extends Component{
                     <p>5.Subtract 21from 35 and add 45 to it.</p>
                 <label>
                 <Link to = "/" >
-                        <RaisedButton label="Quit" primary={true} style={style} onClick = {(event) => this.sendMessage()}/>
+                        <RaisedButton label="Quit" primary={true} style={style} onClick = {(event) => this.LoginPage()}/>
                     </Link>
                 </label>
                 <label>
