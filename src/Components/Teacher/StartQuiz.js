@@ -28,6 +28,12 @@ class StartQuiz extends Component{
             <div className = "StartQuiz">
             <MuiThemeProvider>
                 <div>
+                    <p>1. How much is the addition of 2 and 3 numbers?</p>
+                    <p>2.Multiply 2 and 3 numbers.</p>
+                    <p>3.Add 2,3,4and 5 numbers.</p>
+                    <p>4.Divide 10 and 5.</p>
+                    <p>5.Subtract 21from 35 and add 45 to it.</p>
+
                 <Link to = "/" >
                         <RaisedButton label="Quit" primary={true} style={style} onClick = {(event) => this.sendMessage()}/>
                         
