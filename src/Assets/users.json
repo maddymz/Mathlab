@@ -6,6 +6,24 @@
         "role": "student"
     },
     {
+        "username": "scheruk5",
+        "name": "Surya Cherukuri",
+        "password": "surya",
+        "role": "student"
+    },
+    {
+        "username": "vkhatri2",
+        "name": "Sajjith Thattazhi",
+        "password": "sajjith",
+        "role": "student"
+    },
+    {
+        "username": "vkhatri2",
+        "name": "Madhukar Raj",
+        "password": "madhukar",
+        "role": "student"
+    },
+    {
         "username": "mjfindler",
         "name": "Michael Findler",
         "password": "michaelfindler",

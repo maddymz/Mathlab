@@ -14,7 +14,6 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -28,29 +27,33 @@ const useStyles = makeStyles(theme => ({
 
 class Login extends Component {
 
+  handleClick() {
+    
+  }
+
 render() {
   var styleList = {
       height: '350px',
       width: '450px',
-      position: 'absolute', 
+      position: 'center', 
       left: '50%', 
       top: '20%',
-      transform: 'translate(-50%, 0%)',
+      transform: 'translate(-50%, 20%)',
       overflow: 'auto'
     };
-    var data = require('./studentList.json');
+    var data = require('../../Assets/users.json');
     var obj = JSON.parse(JSON.stringify(data))
-    const elements = obj.Students;
-    const items = [];
-
-    for (const [index, value] of elements.entries()) {
-      items.push(value)
+    
+    var items = [];
+    console.log(obj);
+    for (const [index, value] of obj.entries()) {
+      if(value.role == "student") {
+        items.push(value.name)
+      }
     }
-    var namesList = items.map(function(name){
-      return (<li>{name}</li>); 
-    })
     //const classes = useStyles();
     return (
+      
       <div>
         <MuiThemeProvider>
           <div>
@@ -82,9 +85,8 @@ render() {
                     </React.Fragment>
                   }
                 />
-                
               </ListItem>
-             // <Divider variant="inset" component="li" />
+              //<Divider variant="inset" component="li" />           
             )
             })}
             </List>
@@ -98,6 +100,6 @@ render() {
 }
 const style = {
  margin: 15,
- transform: 'translate(400%, 0%)',
+ transform: 'translate(400%, 400%)',
 };
 export default Login;
