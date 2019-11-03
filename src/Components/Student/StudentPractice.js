@@ -8,6 +8,12 @@ import DragnDrop from '../DragnDrop/dragndrop';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
 
+/**
+ * @author: Sajith Thattazhi
+ * @version: 1.0
+ * @author: Madhukar Raj
+ * @version: 2.0
+ */
 class StudentPractice extends Component {
 	constructor(props) {
 		super(props);
