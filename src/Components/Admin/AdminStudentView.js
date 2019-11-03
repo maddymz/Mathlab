@@ -1,33 +1,34 @@
-import React, {Component} from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
-
-import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
+import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
+import AppBar from 'material-ui/AppBar';
+import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React, { Component } from 'react';
+
 
 /**
  * @author: Surya Cherukuri
  * @version: 2.0
+ * @author: Viraj Khatri
+ * @version: 3.0
  */
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-  inline: {
-    display: 'inline',
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     width: '100%',
+//     maxWidth: 360,
+//     backgroundColor: theme.palette.background.paper,
+//   },
+//   inline: {
+//     display: 'inline',
+//   },
+// }));
 
-class Login extends Component {
+class AdminStudentView extends Component {
 
   handleClick() {
     
@@ -49,7 +50,9 @@ render() {
     var items = [];
     console.log(obj);
     for (const [index, value] of obj.entries()) {
-      if(value.role == "student") {
+      console.log(index);
+      
+      if(value.role === "student") {
         items.push(value.name)
       }
     }
@@ -104,4 +107,4 @@ const style = {
  margin: 15,
  transform: 'translate(400%, 400%)',
 };
-export default Login;
+export default AdminStudentView;

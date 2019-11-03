@@ -33,7 +33,7 @@
         "username": "admin",
         "name": "Admin",
         "password": "admin123",
-        "type": "admin"
+        "role": "admin"
     },
     {
         "username": "mjfindler",
