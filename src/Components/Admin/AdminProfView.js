@@ -14,6 +14,11 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
+/**
+ * @author: Surya Cherukuri
+ * @version: 2.0
+ */
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',

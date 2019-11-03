@@ -34,5 +34,23 @@
         "name": "Admin",
         "password": "admin123",
         "type": "admin"
+    },
+    {
+        "username": "mjfindler",
+        "name": "Michael Findler",
+        "password": "michaelfindler",
+        "role": "teacher"
+    },
+    {
+        "username": "mjfindler",
+        "name": "Michael Findler",
+        "password": "michaelfindler",
+        "role": "teacher"
+    },
+    {
+        "username": "mjfindler",
+        "name": "Michael Findler",
+        "password": "michaelfindler",
+        "role": "teacher"
     }
 ]
