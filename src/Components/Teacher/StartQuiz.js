@@ -7,6 +7,11 @@ import {Link} from 'react-router-dom';
 import './Teacher.css';
 import Header from '../Header/Header';
 
+/**
+ * @author : Bhavana Vakkalagadda(bvakkala)
+ * @since : 02 Nov, 2019
+ */
+
 class StartQuiz extends Component{
     constructor(props) {
         super(props);
