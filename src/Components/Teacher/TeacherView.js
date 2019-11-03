@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Link} from "react-router-dom";
 
 
 class TeacherView extends Component {
