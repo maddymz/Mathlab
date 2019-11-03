@@ -6,6 +6,13 @@ import Header from '../Header/Header';
 import './LoginScreen.css';
 import data from '../../Assets/users.json'
 
+/**
+ * @author: Madhukar Raj
+ * @version: 1.0
+ * @author: Viraj Khatri
+ * @version: 2.0
+ */
+
 // Login Component
 class Login extends Component {
 

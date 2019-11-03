@@ -1,8 +1,12 @@
-import RaisedButton from 'material-ui/RaisedButton';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, { Component } from 'react';
-import Header from '../Header/Header';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
 import './Student.css';
+import Header from '../Header/Header';
+import DragnDrop from '../DragnDrop/dragndrop';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DndProvider } from 'react-dnd';
 
 class StudentPractice extends Component {
 	constructor(props) {
@@ -15,7 +19,7 @@ class StudentPractice extends Component {
 	}
 
 	goBackToStudent() {
-		this.props.history.push('/student', this.state)
+		this.props.history.push('/student', this.state.username)
 	}
 
 	render() {
@@ -24,6 +28,15 @@ class StudentPractice extends Component {
 				<MuiThemeProvider>
 					<div>
 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
+					</div>
+					<div>
+						<Paper style={style}>
+							<div className="drag-n-drop">
+								<DndProvider backend={HTML5Backend}>
+									<DragnDrop />
+								</DndProvider>
+							</div>
+						</Paper>
 					</div>
 					<div>
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
