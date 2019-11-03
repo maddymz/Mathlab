@@ -35,7 +35,7 @@ class CreateQuiz extends Component {
 
         this.props.history.push('/teacher/startquiz', this.state)
 
-
+    }
     render() {
         const customStyle = { marginright: "150px" }
         return (
