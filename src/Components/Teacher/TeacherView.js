@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Link} from "react-router-dom";
 
+/**
+ * @author : Bhavana Vakkalagadda(bvakkala)
+ * @since : 02 Nov, 2019
+ */
 
 class TeacherView extends Component {
    

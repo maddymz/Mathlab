@@ -6,6 +6,10 @@ import TeacherView from './TeacherView';
 import CreateQuiz from './CreateQuiz';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+/**
+ * @author : Bhavana Vakkalagadda(bvakkala)
+ * @since : 02 Nov, 2019
+ */
 
 class Teacher extends Component {
     constructor(props){

@@ -4,6 +4,10 @@ import AppBar from 'material-ui/AppBar';
 import './Header.css';
 import RaisedButton from 'material-ui/RaisedButton/RaisedButton';
 
+/**
+ * @author Sajith Thattazhi, Viraj Khatri
+ * @version 1.0
+ */
 class Header extends Component {
     constructor(props) {
         super(props);

@@ -7,6 +7,17 @@ import StudentQuiz from './Components/Student/StudentQuiz';
 import TeacherView from './Components/Teacher/TeacherView'
 import CreateQuiz from './Components/Teacher/CreateQuiz'
 import StartQuiz from './Components/Teacher/StartQuiz';
+import AdminPage from './Components/Admin/Adminpage'
+import AdminProfView from './Components/Admin/AdminProfView'
+import AdminStudentView from './Components/Admin/AdminStudentView'
+
+/**
+ * @author: Madhukar Raj
+ * @version: 1.0
+ * @author: Viraj Khatri
+ * @version: 2.0
+ */
+
 class App extends Component {
   render() {
     return (
@@ -14,14 +25,17 @@ class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path='/' component={Login} />
-            <Route path="/student" exact component={StudentMain} />
-            <Route path="/student/practice" component={StudentPractice} />
-            <Route path="/student/quiz" component={StudentQuiz} />
-            <Route path="/teacher" component={TeacherView} />
-            <Route path='/quiz' component={CreateQuiz}/>
-            <Route path='/teacher/startquiz' component={StartQuiz}/>
+            <Route exact path="/student" component={StudentMain} />
+            <Route exact path="/student/practice" component={StudentPractice} />
+            <Route exact path="/student/quiz" component={StudentQuiz} />
+            <Route exact path="/teacher" component={TeacherView} />
+            <Route exact path='/quiz' component={CreateQuiz}/>
+            <Route exact path='/admin' component={AdminPage}/>
+            <Route exact path='/admin/prof' component={AdminProfView}/>
+            <Route exact path='/admin/student' component={AdminStudentView}/>
+            <Route exact path='/teacher/startquiz' component={StartQuiz}/>
           </Switch>
-        </div>
+        </div>  
       </BrowserRouter>
     );
   }

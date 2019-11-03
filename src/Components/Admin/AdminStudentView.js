@@ -1,30 +1,64 @@
-import React, {Component} from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Avatar from '@material-ui/core/Avatar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
 import AppBar from 'material-ui/AppBar';
-import myData from './studentList';
-import {List, ListItem} from 'material-ui/List';
 import RaisedButton from 'material-ui/RaisedButton';
-class Login extends Component {
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React, { Component } from 'react';
+
+
+/**
+ * @author: Surya Cherukuri
+ * @version: 2.0
+ * @author: Viraj Khatri
+ * @version: 3.0
+ */
+
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     width: '100%',
+//     maxWidth: 360,
+//     backgroundColor: theme.palette.background.paper,
+//   },
+//   inline: {
+//     display: 'inline',
+//   },
+// }));
+
+class AdminStudentView extends Component {
+
+  handleClick() {
+    
+  }
 
 render() {
   var styleList = {
-      height: '150px',
+      height: '350px',
       width: '450px',
-      position: 'absolute', 
+      position: 'center', 
       left: '50%', 
       top: '20%',
-      transform: 'translate(-50%, 0%)',
+      transform: 'translate(-50%, 20%)',
       overflow: 'auto'
     };
-    var data = require('./studentList.json');
+    var data = require('../../Assets/users.json');
     var obj = JSON.parse(JSON.stringify(data))
-    const elements = obj.Students;
-    const items = [];
-
-    for (const [index, value] of elements.entries()) {
-      items.push(<ListItem primaryText={value}/>)
+    
+    var items = [];
+    console.log(obj);
+    for (const [index, value] of obj.entries()) {
+      console.log(index);
+      
+      if(value.role === "student") {
+        items.push(value.name)
+      }
     }
+    //const classes = useStyles();
     return (
+      
       <div>
         <MuiThemeProvider>
           <div>
@@ -33,7 +67,33 @@ render() {
              color="Black"
             />
             <List style={styleList}>
-              {items}
+            {items.map((name, key) => {
+            return (
+              <ListItem alignItems="flex-start">
+                <ListItemAvatar>
+                  <Avatar alt="Findler" src={require('./Findler.jpg')}/>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={name}
+                  secondary={
+                    <React.Fragment>
+                      <Typography
+                        component="span"
+                        variant="body2"
+                        
+                        color="textPrimary"
+                      >
+                        Software Engineering
+                      </Typography>
+                      <br></br>
+                      {" - Michael.Findler@asu.edu"}
+                    </React.Fragment>
+                  }
+                />
+              </ListItem>
+              //<Divider variant="inset" component="li" />           
+            )
+            })}
             </List>
             <RaisedButton label="Add Student" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
             <RaisedButton label="Delete Student" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
@@ -45,6 +105,6 @@ render() {
 }
 const style = {
  margin: 15,
- transform: 'translate(400%, 0%)',
+ transform: 'translate(400%, 400%)',
 };
-export default Login;
+export default AdminStudentView;

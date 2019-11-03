@@ -3,7 +3,17 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import './Student.css';
+import Header from '../Header/Header';
+import DragnDrop from '../DragnDrop/dragndrop';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DndProvider } from 'react-dnd';
 
+/**
+ * @author: Sajith Thattazhi
+ * @version: 1.0
+ * @author: Madhukar Raj
+ * @version: 2.0
+ */
 class StudentPractice extends Component {
 	constructor(props) {
 		super(props);
@@ -15,7 +25,7 @@ class StudentPractice extends Component {
 	}
 
 	goBackToStudent() {
-		this.props.history.push('/student', this.state)
+		this.props.history.push('/student', this.state.username)
 	}
 
 	render() {
@@ -27,7 +37,11 @@ class StudentPractice extends Component {
 					</div>
 					<div>
 						<Paper style={style}>
-							This is where the practice section goes.
+							<div className="drag-n-drop">
+								<DndProvider backend={HTML5Backend}>
+									<DragnDrop />
+								</DndProvider>
+							</div>
 						</Paper>
 					</div>
 					<div>
