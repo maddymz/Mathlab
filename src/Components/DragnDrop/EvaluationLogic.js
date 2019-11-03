@@ -1,3 +1,8 @@
+/**
+ * @author: Viraj Khatri
+ * @version: 1.0
+ */
+
 class EvaluationLogic {
     evaluate(expression) {
         expression = expression.split('')
