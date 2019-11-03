@@ -1,6 +1,10 @@
 import React from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
+/**
+ * @author: Madhukar Raj
+ * @version: version 1.0
+ */
 const style = {
   height: '25rem',
   width: '25rem',
