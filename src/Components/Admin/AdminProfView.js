@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
- import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
- import AppBar from 'material-ui/AppBar';
- import myData from './studentList';
-// import {List, ListItem} from 'material-ui/List';
- import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
