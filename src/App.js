@@ -1,10 +1,3 @@
-/**
- * @author: Madhukar Raj
- * @version: 1.0
- * @author: Viraj Khatri
- * @version: 2.0
- */
-
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Components/Login/Loginscreen';
@@ -14,6 +7,14 @@ import StudentQuiz from './Components/Student/StudentQuiz';
 import TeacherView from './Components/Teacher/TeacherView'
 import CreateQuiz from './Components/Teacher/CreateQuiz'
 import StartQuiz from './Components/Teacher/StartQuiz';
+
+/**
+ * @author: Madhukar Raj
+ * @version: 1.0
+ * @author: Viraj Khatri
+ * @version: 2.0
+ */
+
 class App extends Component {
   render() {
     return (

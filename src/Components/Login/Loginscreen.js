@@ -1,10 +1,3 @@
-/**
- * @author: Madhukar Raj
- * @version: 1.0
- * @author: Viraj Khatri
- * @version: 2.0
- */
-
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
@@ -12,6 +5,13 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './LoginScreen.css';
 import data from '../../Assets/users.json'
+
+/**
+ * @author: Madhukar Raj
+ * @version: 1.0
+ * @author: Viraj Khatri
+ * @version: 2.0
+ */
 
 // Login Component
 class Login extends Component {
