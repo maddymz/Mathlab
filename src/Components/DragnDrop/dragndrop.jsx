@@ -6,11 +6,23 @@ export default function Container() {
     <div>
       <div style={{ overflow: 'hidden', clear: 'both' }}>
         <Dustbin />
-        <Box name="4" />
+        <Box name="1" />
+        <Box name="2" />
         <Box name="3" />
-        <Box name="20" />
+        <Box name="4" />
+        <Box name="5" />
+        <Box name="6" />
+        <Box name="7" />
+        <Box name="8" />
+        <Box name="9" />
+        <Box name="0" />
+        <Box name="+" />
+        <Box name="-" />
+        <Box name="*" />
+        <Box name="/" />
+        <Box name="(" />
+        <Box name=")" />
       </div>
-      
     </div>
   )
 }

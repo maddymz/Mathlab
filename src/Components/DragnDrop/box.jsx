@@ -20,10 +20,10 @@ const Box = ({ name }) => {
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult()
       if (item && dropResult) {
-        // alert(`You dropped ${item.name} into ${dropResult.name}!`);
+        alert(`You dropped ${item.name} into ${dropResult.name}!`);
         var logic = new EvaluationLogic();
-        var tempExpression = "2+3"
-        alert(logic.evaluate(tempExpression))
+        var tempExpression = "2+3";
+        console.log(logic.evaluate(tempExpression));
       }
     },
     collect: monitor => ({
