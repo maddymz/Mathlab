@@ -8,6 +8,10 @@ import './Student.css';
 import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 
+/**
+ * @author: Sajith Thattazhi
+ * @version: 1.0
+ */
 class StudentQuiz extends Component {
 
 	constructor(props) {

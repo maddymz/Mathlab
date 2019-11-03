@@ -4,6 +4,10 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './Student.css';
 
+/**
+ * @author: Sajith Thattazhi
+ * @version: 1.0
+ */
 class StudentMain extends Component {
 	constructor(props) {
 		super(props);
