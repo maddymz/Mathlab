@@ -19,7 +19,7 @@ class StudentPractice extends Component {
 	}
 
 	goBackToStudent() {
-		this.props.history.push('/student', this.state)
+		this.props.history.push('/student', this.state.username)
 	}
 
 	render() {
@@ -33,7 +33,7 @@ class StudentPractice extends Component {
 						<Paper style={style}>
 							<div className="drag-n-drop">
 								<DndProvider backend={HTML5Backend}>
-									<DragnDrop/>
+									<DragnDrop />
 								</DndProvider>
 							</div>
 						</Paper>

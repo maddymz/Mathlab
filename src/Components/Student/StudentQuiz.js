@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { DndProvider } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import './Student.css';
 import Header from '../Header/Header';
+import DragnDrop from '../DragnDrop/dragndrop';
 
 class StudentQuiz extends Component {
 
@@ -17,7 +20,7 @@ class StudentQuiz extends Component {
 	}
 
 	goBackToStudent() {
-		this.props.history.push('/student', this.state)
+		this.props.history.push('/student', this.state.username)
 	}
 
 	submitQuiz() {
@@ -33,7 +36,14 @@ class StudentQuiz extends Component {
 					</div>
 					<div>
 						<Paper style={style}>
-							This is where the quiz will go.
+							<div>
+								Implement 4 + 5
+							</div>
+							<div>
+								<DndProvider backend={HTML5Backend}>
+									<DragnDrop />
+								</DndProvider>
+							</div>
 						</Paper>
 					</div>
 					<div>
