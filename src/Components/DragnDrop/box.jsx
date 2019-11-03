@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDrag } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
-import { renderComponent } from 'recompose'
 import EvaluationLogic from './EvaluationLogic'
 
 const style = {
@@ -21,9 +20,10 @@ const Box = ({ name }) => {
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult()
       if (item && dropResult) {
-        alert(`You dropped ${item.name} into ${dropResult.name}!`);
+        // alert(`You dropped ${item.name} into ${dropResult.name}!`);
         var logic = new EvaluationLogic();
-        logic.evaluate();
+        var tempExpression = "2+3"
+        alert(logic.evaluate(tempExpression))
       }
     },
     collect: monitor => ({
