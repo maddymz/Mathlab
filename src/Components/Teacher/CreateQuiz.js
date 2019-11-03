@@ -5,7 +5,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import './Teacher.css';
 // eslint-disable-next-line 
 import Header from '../Header/Header'
-
+/**
+ * @author : Bhavana Vakkalagadda(bvakkala)
+ * @since : 02 Nov, 2019
+ */
 
 class CreateQuiz extends Component {
 
@@ -31,8 +34,6 @@ class CreateQuiz extends Component {
         console.log(" inside start quiz functions !!");
 
         this.props.history.push('/teacher/startquiz', this.state)
-        //this.props.push('./Teacher/StartQuiz', this.state)
-    }
 
 
     render() {

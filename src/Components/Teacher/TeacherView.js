@@ -3,6 +3,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 
+/**
+ * @author : Bhavana Vakkalagadda(bvakkala)
+ * @since : 02 Nov, 2019
+ */
 
 class TeacherView extends Component {
    
