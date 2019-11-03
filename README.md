@@ -19,6 +19,12 @@ NodeJS
 
 In the project directory, you can run:
 
+## `npm install`
+
+Downloads all the project dependencies
+
+This should be the first command to be executed after cloning the project 
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
