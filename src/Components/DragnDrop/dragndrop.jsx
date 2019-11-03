@@ -1,3 +1,7 @@
+import React from 'react'
+import Dustbin from './dropArea'
+import Box from './box'
+
 /**
  * @author: Madhukar Raj
  * @version: 1.0
@@ -5,9 +9,6 @@
  * @version: 2.0
  */
 
-import React from 'react'
-import Dustbin from './dropArea'
-import Box from './box'
 export default function Container() {
   return (
     <div>

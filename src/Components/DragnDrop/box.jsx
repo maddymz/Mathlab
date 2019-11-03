@@ -1,13 +1,14 @@
+import React, { version } from 'react'
+import { useDrag } from 'react-dnd'
+import ItemTypes from '../DragnDrop/draggableTypes'
+import EvaluationLogic from './EvaluationLogic'
+
 /**
  * @author: Madhukar Raj
  * @version: 1.0
  * @author: Viraj Khatri
  * @version: 2.0
  */
-import React, { version } from 'react'
-import { useDrag } from 'react-dnd'
-import ItemTypes from '../DragnDrop/draggableTypes'
-import EvaluationLogic from './EvaluationLogic'
 
 const style = {
   border: '1px dashed gray',
