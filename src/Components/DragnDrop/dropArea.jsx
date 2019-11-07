@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
+import BOX from './box'
 /**
  * @author: Madhukar Raj
  * @version: version 1.0
@@ -36,6 +37,7 @@ const DropArea = () => {
   return (
     <div ref={drop} style={{ ...style, backgroundColor }}>
       {isActive ? 'Release to drop' : 'Drag a box here'}
+      <BOX></BOX>
     </div>
   )
 }
