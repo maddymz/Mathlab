@@ -6,11 +6,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import './Student.css';
 import Header from '../Header/Header';
-import DragnDrop from '../DragnDrop/dragndrop';
+import QuizList from './QuizList'
 
 /**
  * @author: Sajith Thattazhi
- * @version: 1.0
+ * @version: 2.0
  */
 class StudentQuiz extends Component {
 
@@ -41,12 +41,10 @@ class StudentQuiz extends Component {
 					<div>
 						<Paper style={style}>
 							<div>
-								Implement 4 + 5
+								Select a quiz:
 							</div>
 							<div>
-								<DndProvider backend={HTML5Backend}>
-									<DragnDrop />
-								</DndProvider>
+								<QuizList parentProps={this.props} />
 							</div>
 						</Paper>
 					</div>
