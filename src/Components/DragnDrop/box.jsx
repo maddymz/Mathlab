@@ -31,7 +31,7 @@ const Box = ({ name }) => {
       if (item && dropResult) {
         alert(`You dropped ${item.name} into ${dropResult.name}!`);
         var logic = new EvaluationLogic();
-        var tempExpression = "2+3";
+        var tempExpression = "23+3";
         var res = logic.evaluate(tempExpression);
         validExpression = isNaN(res)
         result = null;
