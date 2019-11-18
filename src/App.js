@@ -4,6 +4,7 @@ import Login from './Components/Login/Loginscreen';
 import StudentMain from './Components/Student/StudentMain';
 import StudentPractice from './Components/Student/StudentPractice';
 import StudentQuiz from './Components/Student/StudentQuiz';
+import QuizQuestions from './Components/Student/QuizQuestions';
 import TeacherView from './Components/Teacher/TeacherView'
 import CreateQuiz from './Components/Teacher/CreateQuiz'
 import StartQuiz from './Components/Teacher/StartQuiz';
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/student" component={StudentMain} />
             <Route exact path="/student/practice" component={StudentPractice} />
             <Route exact path="/student/quiz" component={StudentQuiz} />
+            <Route exact path="/student/quiz/questions" component={QuizQuestions} />
             <Route exact path="/teacher" component={TeacherView} />
             <Route exact path='/quiz' component={CreateQuiz}/>
             <Route exact path='/admin' component={AdminPage}/>

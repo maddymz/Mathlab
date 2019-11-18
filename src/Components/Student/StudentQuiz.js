@@ -27,10 +27,6 @@ class StudentQuiz extends Component {
 		this.props.history.push('/student', this.state.username)
 	}
 
-	submitQuiz() {
-		//TODO: Handle this case.
-	}
-
 	render() {
 		return (
 			<div className="StudentQuiz">
@@ -49,7 +45,6 @@ class StudentQuiz extends Component {
 						</Paper>
 					</div>
 					<div>
-						<RaisedButton label="Submit Quiz" primary={true} style={style} onClick={(event) => this.submitQuiz()} />
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
 					</div>
 				</MuiThemeProvider>

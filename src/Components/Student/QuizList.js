@@ -15,7 +15,10 @@ class QuizList extends Component {
         super(props);
         this.state = {
             quizzes: [],
-            selectedID: ""
+            valuesToSend: {
+                selectedID: "",
+                username: this.props.parentProps.location.state.username
+            }
         }
     }
 
@@ -26,8 +29,9 @@ class QuizList extends Component {
         }
     }
 
-    selectID(event, ID) {
-        this.state.selectedID = ID
+    startQuiz(event, ID) {
+        this.state.valuesToSend.selectedID = ID
+        this.props.parentProps.history.push('/student/quiz/questions', this.state.valuesToSend)
     }
 
     render() {
@@ -41,7 +45,7 @@ class QuizList extends Component {
                             return (
                                 <ListItem
                                     button
-                                    onClick={event => this.selectID(event, quiz.quizId)}
+                                    onClick={event => this.startQuiz(event, quiz.quizId)}
                                 >
                                     <ListItemText className="QuizList" primary={quiz.quizId} />
                                 </ListItem>
