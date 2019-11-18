@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
-import BOX from './box'
 /**
  * @author: Madhukar Raj
  * @version: version 1.0

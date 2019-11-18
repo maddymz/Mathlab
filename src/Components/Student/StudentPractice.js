@@ -7,6 +7,8 @@ import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
+import validExpression from '../DragnDrop/box'
+import Avatar from '@material-ui/core/Avatar';
 
 /**
  * @author: Sajith Thattazhi
@@ -29,6 +31,14 @@ class StudentPractice extends Component {
 	}
 
 	render() {
+		var image;
+		console.log(validExpression);
+		
+		if (validExpression) {
+			image = <Avatar src={require('../../Assets/Images/True.png')} />
+		} else {
+			image = <Avatar src={require('../../Assets/Images/False.png')} />
+		}
 		return (
 			<div className="StudentPractice">
 				<MuiThemeProvider>
@@ -45,6 +55,7 @@ class StudentPractice extends Component {
 						</Paper>
 					</div>
 					<div>
+						{image}
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
 					</div>
 				</MuiThemeProvider>

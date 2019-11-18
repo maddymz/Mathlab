@@ -27,7 +27,7 @@ class QuizList extends Component {
     }
 
     selectID(event, ID) {
-        this.state.selectedID = ID
+        this.setState({ selectedID: ID })
     }
 
     render() {
@@ -53,9 +53,5 @@ class QuizList extends Component {
         );
     }
 }
-
-const style = {
-    margin: 15,
-};
 
 export default QuizList;

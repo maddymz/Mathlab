@@ -20,6 +20,8 @@ const style = {
   float: 'left',
 }
 
+var validExpression = false;
+var result;
 
 const Box = ({ name }) => {
   const [{ isDragging }, drag] = useDrag({
@@ -30,7 +32,12 @@ const Box = ({ name }) => {
         alert(`You dropped ${item.name} into ${dropResult.name}!`);
         var logic = new EvaluationLogic();
         var tempExpression = "2+3";
-        console.log(logic.evaluate(tempExpression));
+        var res = logic.evaluate(tempExpression);
+        validExpression = isNaN(res)
+        result = null;
+        if (validExpression) {
+          result = res;
+        }
       }
     },
     collect: monitor => ({

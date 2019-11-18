@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
-import { DndProvider } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
-import './Student.css';
+import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React, { Component } from 'react';
 import Header from '../Header/Header';
-import QuizList from './QuizList'
+import QuizList from './QuizList';
+import './Student.css';
 
 /**
  * @author: Sajith Thattazhi
