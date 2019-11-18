@@ -34,6 +34,7 @@ class App extends Component {
             <Route exact path='/admin/prof' component={AdminProfView}/>
             <Route exact path='/admin/student' component={AdminStudentView}/>
             <Route exact path='/teacher/startquiz' component={StartQuiz}/>
+            <Route exact path='/teacher/createquiz' component={CreateQuiz}/>
           </Switch>
         </div>  
       </BrowserRouter>

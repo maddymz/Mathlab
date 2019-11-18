@@ -31,11 +31,7 @@ class StartQuiz extends Component{
         
 		//this.props.push('./Teacher/StartQuiz', this.state)
     }
-    CreateQuizPage(){
-        console.log(" inside Create quiz functions !!");
-        
-        this.props.history.push('/Teacher/CreateQuiz', this.state)
-    }
+    
     sendMessage () {
         this.props.setHeaderMessage("Lets start the quiz!");
     }
@@ -54,8 +50,8 @@ class StartQuiz extends Component{
                     <p>4.Divide 10 and 5.</p>
                     <p>5.Subtract 21from 35 and add 45 to it.</p>
                 <label>
-                <Link to = "/" >
-                        <RaisedButton label="Quit" primary={true} style={style} onClick = {(event) => this.CreateQuizPage()}/>
+                <Link to = "/teacher/createquiz" >
+                        <RaisedButton label="Quit" primary={true} style={style} />
                     </Link>
                 </label>
                 <label>
