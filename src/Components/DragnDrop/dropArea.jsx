@@ -37,7 +37,6 @@ const DropArea = () => {
   return (
     <div ref={drop} style={{ ...style, backgroundColor }}>
       {isActive ? 'Release to drop' : 'Drag a box here'}
-      <BOX></BOX>
     </div>
   )
 }
