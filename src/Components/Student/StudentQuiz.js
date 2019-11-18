@@ -10,7 +10,7 @@ import QuizList from './QuizList'
 
 /**
  * @author: Sajith Thattazhi
- * @version: 2.0
+ * @version: 3.0
  */
 class StudentQuiz extends Component {
 

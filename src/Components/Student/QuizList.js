@@ -8,7 +8,7 @@ import data from '../../Assets/quizzes.json'
 
 /**
  * @author Sajith Thattazhi
- * @version 1.0
+ * @version 2.0
  */
 class QuizList extends Component {
     constructor(props) {
