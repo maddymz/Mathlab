@@ -9,7 +9,7 @@ import Header from '../Header/Header';
 
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
- * @since : 02 Nov, 2019
+ * @since : 19 Nov, 2019
  */
 
 class StartQuiz extends Component{
