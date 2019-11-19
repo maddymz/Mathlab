@@ -10,7 +10,7 @@ import QuizList from './QuizList'
 
 /**
  * @author: Sajith Thattazhi
- * @version: 2.0
+ * @version: 3.0
  */
 class StudentQuiz extends Component {
 
@@ -25,10 +25,6 @@ class StudentQuiz extends Component {
 
 	goBackToStudent() {
 		this.props.history.push('/student', this.state.username)
-	}
-
-	submitQuiz() {
-		//TODO: Handle this case.
 	}
 
 	render() {
@@ -49,7 +45,6 @@ class StudentQuiz extends Component {
 						</Paper>
 					</div>
 					<div>
-						<RaisedButton label="Submit Quiz" primary={true} style={style} onClick={(event) => this.submitQuiz()} />
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
 					</div>
 				</MuiThemeProvider>
