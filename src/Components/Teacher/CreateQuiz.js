@@ -44,17 +44,13 @@ class CreateQuiz extends Component {
                 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
 
                 <MuiThemeProvider>
-                    <p> Quiz Instructions </p>
-                    <p style={customStyle}> 1.Total 5 questions </p>
-                    <p style={customStyle}> 2.Each question carry 3 marks </p>
-                    <p> 3.Not time based</p>
-                    <p> 4.Expected to know arthematic operations </p>
+                   
                     <div>
                         <label>
                         <Link to = "/" >
                         <RaisedButton label="Back" primary={true} style={style}/>
                      </Link>
-                                             </label>
+                     </label>
 
                         <label>
                             <RaisedButton label="Continue" primary={true} style={style} onClick={(event) => this.StartQuizPage()} />
