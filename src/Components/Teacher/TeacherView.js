@@ -6,6 +6,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
  * @since : 02 Nov, 2019
+ * @version : 2.0
+ * 
  */
 
 class TeacherView extends Component {

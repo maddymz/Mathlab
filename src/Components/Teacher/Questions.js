@@ -12,6 +12,7 @@ import data from '../../Assets/users.json'
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
  * @since : 20 Nov, 2019
+ * @version : 1.0
  */
 
 class Questions extends Component{

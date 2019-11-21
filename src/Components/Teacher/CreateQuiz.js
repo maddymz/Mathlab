@@ -9,6 +9,7 @@ import Header from '../Header/Header'
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
  * @since : 02 Nov, 2019
+ * @version : 2.0
  */
 
 class CreateQuiz extends Component {
