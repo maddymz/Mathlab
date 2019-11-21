@@ -16,13 +16,15 @@ import Avatar from '@material-ui/core/Avatar';
  * @author: Madhukar Raj
  * @version: 2.0
  */
+
 class StudentPractice extends Component {
 	constructor(props) {
 		super(props);
 		var headerMessage = "Let's Practice";
 		this.state = {
 			message: headerMessage,
-			username: this.props.location.state.username
+			username: this.props.location.state.username,
+			validity: validExpression
 		}
 	}
 
@@ -31,7 +33,7 @@ class StudentPractice extends Component {
 	}
 
 	getImage() {
-		if (validExpression) {
+		if (this.state.validity) {
 			return <Avatar src={require('../../Assets/Images/True.png')} />
 		} else {
 			return <Avatar src={require('../../Assets/Images/False.png')} />
@@ -43,8 +45,11 @@ class StudentPractice extends Component {
 		setExpression('');
 	}
 
+	setValidity(value) {
+		this.setState({ validity: value })
+	}
+
 	render() {
-		var image = this.getImage();
 		return (
 			<div className="StudentPractice">
 				<MuiThemeProvider>
@@ -61,7 +66,8 @@ class StudentPractice extends Component {
 						</Paper>
 					</div>
 					<div>
-						{image}
+						{/* {image} */}
+						{this.state.validity ? <Avatar src={require('../../Assets/Images/True.png')} /> : <Avatar src={require('../../Assets/Images/False.png')} />}
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
 						<RaisedButton label="Clear" primary={true} style={style} onClick={(event) => this.clearDropArea()} />
 					</div>
@@ -76,4 +82,9 @@ const style = {
 	margin: 15,
 };
 
+export class setVal extends StudentPractice {
+	setVal(val) {
+		super.setValidity(val)
+	}
+}
 export default StudentPractice;

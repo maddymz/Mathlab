@@ -1,7 +1,6 @@
 import React from 'react';
 import Box from './box';
 import DropArea from './dropArea';
-
 /**
  * @author: Madhukar Raj
  * @version: 1.0
