@@ -2,6 +2,7 @@ import React from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
 import Box from './box'
+import { renderComponent } from 'recompose'
 /**
  * @author: Madhukar Raj
  * @version: version 1.0
@@ -27,8 +28,7 @@ var boxes = [];
 export function clearBoxes() {
   console.log("bhwf")
   boxes = [];
-  showBox=false;  
-  window.location.reload(false);
+  showBox = false;
 }
 
 const DropArea = () => {
