@@ -5,6 +5,8 @@ import Box from './box'
 /**
  * @author: Madhukar Raj
  * @version: version 1.0
+ * @author: Sajith Thattazhi
+ * @version: version 2.0
  */
 const style = {
   height: '25rem',
