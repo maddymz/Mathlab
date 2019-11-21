@@ -38,7 +38,7 @@ class Login extends Component {
               setUserData(userData[i].grade);
               switch (userData[i].role) {
                 case "student":
-                  this.props.history.push('/student', userData[i].name)
+                  this.props.history.push('/student', [userData[i].name, userData[i].grade])
                   return
                 case "teacher":
                   this.props.history.push('/teacher', userData[i].name)
