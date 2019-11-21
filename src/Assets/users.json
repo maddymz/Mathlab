@@ -3,31 +3,39 @@
         "username": "vkhatri2",
         "name": "Viraj Khatri",
         "password": "virajkhatri",
-        "role": "student"
+        "role": "student",
+        "email": "vkhatri2@asu.edu"
+        "grade":"1
     },
     {
         "username": "scheruk5",
         "name": "Surya Cherukuri",
         "password": "surya",
-        "role": "student"
+        "role": "student",
+        "email": "scheruk5@asu.edu"
+        "grade":"4"
+
     },
     {
-        "username": "vkhatri2",
+        "username": "sajjtha",
         "name": "Sajjith Thattazhi",
         "password": "sajjith",
-        "role": "student"
+        "role": "student",
+        "email": "sajjtha@asu.edu"
     },
     {
-        "username": "vkhatri2",
+        "username": "madhura",
         "name": "Madhukar Raj",
         "password": "madhukar",
-        "role": "student"
+        "role": "student",
+        "email": "madhura@asu.edu"
     },
     {
-        "username": "mjfindler",
+        "username": "mjfindler1",
         "name": "Michael Findler",
         "password": "michaelfindler",
-        "role": "teacher"
+        "role": "teacher",
+        "email": "mjfindler1@asu.edu"
     },
     {
         "username": "admin",
@@ -36,21 +44,24 @@
         "role": "admin"
     },
     {
-        "username": "mjfindler",
-        "name": "Michael Findler",
+        "username": "mjfindler2",
+        "name": "Ajay Bansal",
         "password": "michaelfindler",
-        "role": "teacher"
+        "role": "teacher",
+        "email": "mjfindler2@asu.edu"
     },
     {
-        "username": "mjfindler",
-        "name": "Michael Findler",
+        "username": "mjfindler3",
+        "name": "John doe",
         "password": "michaelfindler",
-        "role": "teacher"
+        "role": "teacher",
+        "email": "mjfindler3@asu.edu"
     },
     {
-        "username": "mjfindler",
-        "name": "Michael Findler",
+        "username": "mjfindler4",
+        "name": "Cristiano Ronaldo",
         "password": "michaelfindler",
-        "role": "teacher"
+        "role": "teacher",
+        "email": "mjfindler4@asu.edu"
     }
 ]
