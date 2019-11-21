@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 import data from '../../Assets/quizzes.json'
 import { Avatar } from 'material-ui';
+import { result } from '../DragnDrop/box'
 import { clearBoxes } from '../DragnDrop/dropArea';
 
 /**
@@ -56,12 +57,21 @@ class QuizQuestions extends Component {
 
     goBackToQuizSelection() {
         this.props.history.push('/student/quiz', this.state)
-        clearBoxes()
+        clearBoxes();
     }
 
     submitQuiz() {
         this.props.history.push('/student/quiz', this.state)
-        clearBoxes()
+        clearBoxes();
+    }
+
+    evaluate() {
+        if (this.state.questions[this.state.currentQuestionNumber].answer === String(result)) {
+            this.setState({ validity: true })
+        } else {
+            this.setState({ validity: false })
+        }
+        this.setState({result: result})
     }
 
     render() {
