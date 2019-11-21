@@ -11,8 +11,6 @@ import Box from './box'
 const style = {
   height: '25rem',
   width: '25rem',
-  marginRight: '1.5rem',
-  marginBottom: '1.5rem',
   color: 'white',
   padding: '2rem',
   textAlign: 'center',
@@ -29,7 +27,7 @@ export function clearBoxes() {
   console.log("bhwf")
   boxes = [];
   showBox=false;
-  
+
 }
 
 const DropArea = () => {

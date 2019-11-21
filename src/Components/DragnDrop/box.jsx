@@ -2,7 +2,7 @@ import React from 'react'
 import { useDrag } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
 import EvaluationLogic from './EvaluationLogic'
-import StudentPractice, { a } from '../Student/StudentPractice.js'
+// import StudentPractice, { a } from '../Student/StudentPractice.js'
 
 /**
  * @author: Madhukar Raj
@@ -57,10 +57,8 @@ const Box = ({ name }) => {
         var res = logic.evaluate(expression);
         validExpression = !isNaN(res)
         console.log(expression, res, validExpression);
-        a();
+        // a();
         result = null;
-
-        // new setVal(validExpression)
         if (validExpression) {
           result = res;
         }
