@@ -153,7 +153,7 @@ render(){
               <Modal trigger={addButton} closeIcon>
           <Modal.Header>
 
-            Add Student
+            Add Professor
           </Modal.Header>
           <Modal.Content>
           <Modal.Description>
