@@ -8,6 +8,8 @@ import EvaluationLogic from './EvaluationLogic'
  * @version: 1.0
  * @author: Viraj Khatri
  * @version: 2.0
+ * @author: Sajith Thattazhi
+ * @version: 3.0
  */
 
 const style = {
