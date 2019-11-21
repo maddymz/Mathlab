@@ -9,7 +9,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
 import { validExpression, setValidExpression, setExpression } from '../DragnDrop/box'
 import Avatar from '@material-ui/core/Avatar';
-
+import { clearBoxes } from '../DragnDrop/dropArea';
 /**
  * @author: Sajith Thattazhi
  * @version: 1.0
@@ -43,6 +43,7 @@ class StudentPractice extends Component {
 	clearDropArea() {
 		setValidExpression(false);
 		setExpression('');
+		clearBoxes();
 	}
 
 	setValidity(value) {
@@ -82,9 +83,13 @@ const style = {
 	margin: 15,
 };
 
-export class setVal extends StudentPractice {
-	setVal(val) {
-		super.setValidity(val)
-	}
+// export class setVal extends StudentPractice {
+// 	setVal(val) {
+// 		super.setValidity(val)
+// 	}
+// }
+
+export function a() {
+	StudentPractice.setState({ validity: false })
 }
 export default StudentPractice;

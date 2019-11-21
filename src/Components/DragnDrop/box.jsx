@@ -2,13 +2,15 @@ import React from 'react'
 import { useDrag } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
 import EvaluationLogic from './EvaluationLogic'
-import { setVal } from '../Student/StudentPractice.js'
+import StudentPractice, { a } from '../Student/StudentPractice.js'
 
 /**
  * @author: Madhukar Raj
  * @version: 1.0
  * @author: Viraj Khatri
  * @version: 2.0
+ * @author: Sajith Thattazhi
+ * @version: 3.0
  */
 
 const style = {
@@ -43,18 +45,22 @@ const renderBox = (name) => {
 const Box = ({ name }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { name, type: ItemTypes.BOX },
-    end: (item, monitor) => {
-      const dropResult = monitor.getDropResult()
-      if (item && dropResult) {
-        alert(`You dropped ${item.name} into ${dropResult.name}!`);
+    end: (item) => {
+      console.log("item", item)
+      if (item) {
+        // var obj=new StudentPractice();
+        
+        alert(`You dropped ${item.name}`);
         renderBox(name)
         var logic = new EvaluationLogic();
         expression = expression + item.name
         var res = logic.evaluate(expression);
         validExpression = !isNaN(res)
         console.log(expression, res, validExpression);
+        a();
         result = null;
-        new setVal(validExpression)
+
+        // new setVal(validExpression)
         if (validExpression) {
           result = res;
         }
