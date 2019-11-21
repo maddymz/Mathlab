@@ -21,7 +21,7 @@
         "questions": [
             {
                 "question": "Add 5,6 and 3 and show the result?",
-                "answer": "15"
+                "answer": "14"
             },
             {
                 "question": "What is the result if  number 6 is Subtracted from 10 and added result to 11",
@@ -41,7 +41,7 @@
             },
             {
                 "question": "What is the result if we divide 15 by 5",
-                "answer": "5"
+                "answer": "3"
             }
         ],
         "grade": "7",

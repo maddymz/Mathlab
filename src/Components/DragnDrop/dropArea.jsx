@@ -28,7 +28,9 @@ var boxes = [];
 export function clearBoxes() {
   console.log("bhwf")
   boxes = [];
-  showBox = false;
+  showBox=false;  
+  renderComponent(DropArea);
+
 }
 
 const DropArea = () => {

@@ -10,6 +10,8 @@ import DragnDrop from '../DragnDrop/dragndrop';
 import data from '../../Assets/quizzes.json'
 import { Avatar } from 'material-ui';
 import { result } from '../DragnDrop/box'
+import { clearBoxes } from '../DragnDrop/dropArea';
+
 
 /**
  * @author Sajith Thattazhi
@@ -52,14 +54,26 @@ class QuizQuestions extends Component {
                 this.setState({ submittable: true })
             }
         }
+        clearBoxes();
     }
 
     goBackToQuizSelection() {
         this.props.history.push('/student/quiz', this.state)
+        clearBoxes();
     }
 
     submitQuiz() {
         this.props.history.push('/student/quiz', this.state)
+        clearBoxes();
+    }
+
+    evaluate() {
+        if (this.state.questions[this.state.currentQuestionNumber].answer === String(result)) {
+            this.setState({ validity: true })
+        } else {
+            this.setState({ validity: false })
+        }
+        this.setState({result: result})
     }
 
     evaluate() {

@@ -35,6 +35,7 @@ class StudentPractice extends Component {
 
 	goBackToStudent() {
 		this.props.history.push('/student', this.state.username)
+		clearBoxes()
 	}
 
 	getImage() {
