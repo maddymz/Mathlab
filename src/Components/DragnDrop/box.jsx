@@ -50,7 +50,7 @@ const Box = ({ name }) => {
       if (item) {
         // var obj=new StudentPractice();
         
-        alert(`You dropped ${item.name}`);
+        // alert(`You dropped ${item.name}`);
         renderBox(name)
         var logic = new EvaluationLogic();
         expression = expression + item.name
