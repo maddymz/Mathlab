@@ -8,6 +8,8 @@ import EvaluationLogic from './EvaluationLogic'
  * @version: 1.0
  * @author: Viraj Khatri
  * @version: 2.0
+ * @author: Sajith Thattazhi
+ * @version: 3.0
  */
 
 const style = {
@@ -20,29 +22,56 @@ const style = {
   float: 'left',
 }
 
+export var validExpression = true;
+export var result;
+var expression = '';
 
+export function setValidExpression(value) {
+  validExpression = value
+}
+
+export function setExpression(value) {
+  expression = value
+}
+
+export function clearResult() {
+  result = '';
+}
+
+const renderBox = (name) => {
+  return (
+    <Box
+      name={name}
+    />
+  )
+}
 const Box = ({ name }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { name, type: ItemTypes.BOX },
-    end: (item, monitor) => {
-      const dropResult = monitor.getDropResult()
-      if (item && dropResult) {
-        alert(`You dropped ${item.name} into ${dropResult.name}!`);
+    end: (item) => {
+      console.log("item", item)
+
+      if (item) {
+        renderBox(name)
         var logic = new EvaluationLogic();
-        var tempExpression = "2+3";
-        console.log(logic.evaluate(tempExpression));
+        expression = expression + item.name
+        var res = logic.evaluate(expression);
+        validExpression = !isNaN(res)
+        console.log(expression, res, validExpression);
+        result = null;
+        if (validExpression) {
+          result = res;
+        }
       }
     },
     collect: monitor => ({
       isDragging: monitor.isDragging(),
     }),
   })
-
   const opacity = isDragging ? 0.4 : 1
   return (
     <div ref={drag} style={{ ...style, opacity }}>
       {name}
-
     </div>
   )
 }

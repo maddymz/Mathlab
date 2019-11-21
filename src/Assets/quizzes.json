@@ -1,0 +1,50 @@
+[
+    {
+        "quizId": "Quiz 1",
+        "instructions": "Addition and subtraction operations expected",
+        "questions": [
+            {
+                "question": "Add 2 and 3 and show the result?",
+                "answer": "5"
+            },
+            {
+                "question": "What is the result if  number 6 is Subtracted from 10 ",
+                "answer": "4"
+            }
+        ],
+        "grade": "2",
+        "dueDate": "12/15/2019"
+    },
+    {
+        "quizId": "Quiz 2",
+        "instructions": "Addition and subtraction operations expected",
+        "questions": [
+            {
+                "question": "Add 5,6 and 3 and show the result?",
+                "answer": "14"
+            },
+            {
+                "question": "What is the result if  number 6 is Subtracted from 10 and added result to 11",
+                "answer": "15"
+            }
+        ],
+        "grade": "5",
+        "dueDate": "12/20/2019"
+    },
+    {
+        "quizId": "Quiz 3",
+        "instructions": "Arthematic operations expected",
+        "questions": [
+            {
+                "question": "What is the result if we multiply 6 and 9",
+                "answer": "54"
+            },
+            {
+                "question": "What is the result if we divide 15 by 5",
+                "answer": "3"
+            }
+        ],
+        "grade": "7",
+        "dueDate": "12/25/2019"
+    }
+]
