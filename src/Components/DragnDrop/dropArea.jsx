@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
-import BOX from './box'
+import Box from './box'
 /**
  * @author: Madhukar Raj
  * @version: version 1.0
@@ -18,10 +18,16 @@ const style = {
   lineHeight: 'normal',
   float: 'right'
 }
+var showBox = false;
+var boxName = "";
+
 const DropArea = () => {
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: ItemTypes.BOX,
-    drop: () => ({ name: 'DropArea' }),
+    drop: (item) => ({ name: 'DropArea'
+                     },
+                     boxName = item.name,
+                     showBox = true),
     collect: monitor => ({
       isOver: monitor.isOver(),
       canDrop: monitor.canDrop(),
@@ -36,7 +42,8 @@ const DropArea = () => {
   }
   return (
     <div ref={drop} style={{ ...style, backgroundColor }}>
-      {isActive ? 'Release to drop' : 'Drag a box here'}
+      {console.log("boxname",boxName)}
+      {showBox ? <Box name={boxName} /> : (isActive ? 'Release to drop' : 'Drag a box here')}
     </div>
   )
 }
