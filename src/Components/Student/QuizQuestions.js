@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 import data from '../../Assets/quizzes.json'
 import { Avatar } from 'material-ui';
+import { clearBoxes } from '../DragnDrop/dropArea';
 
 /**
  * @author Sajith Thattazhi
@@ -49,16 +50,18 @@ class QuizQuestions extends Component {
             if (this.state.currentQuestionNumber + 1 === this.state.questions.length) {
                 this.setState({ submittable: true })
             }
-
         }
+        clearBoxes();
     }
 
     goBackToQuizSelection() {
         this.props.history.push('/student/quiz', this.state)
+        clearBoxes()
     }
 
     submitQuiz() {
         this.props.history.push('/student/quiz', this.state)
+        clearBoxes()
     }
 
     render() {

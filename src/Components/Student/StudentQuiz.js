@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import QuizList from './QuizList';
 import './Student.css';
+import { clearBoxes } from '../DragnDrop/dropArea';
 
 /**
  * @author: Sajith Thattazhi
@@ -23,6 +24,7 @@ class StudentQuiz extends Component {
 
 	goBackToStudent() {
 		this.props.history.push('/student', this.state.username)
+		clearBoxes()
 	}
 
 	render() {
