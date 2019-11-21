@@ -9,26 +9,19 @@ import Header from '../Header/Header'
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
  * @since : 02 Nov, 2019
+ * @version : 2.0
  */
 
 class CreateQuiz extends Component {
-
-    // sendMessage () {
-    //     this.props.setHeaderMessage("Welcome Teacher");
-    // }
-    // StartQuiz (event) {
-    //     this.props.setHeaderMessage("Have fun");
-    // }
 
     constructor(props) {
         console.log(props);
 
         super(props);
         var headerMessage = "Welcome ";
-        // + this.props.location.state.username;
+       
         this.state = {
             message: headerMessage,
-            //	username: this.props.location.state.username
         }
     }
     StartQuizPage() {
@@ -38,26 +31,27 @@ class CreateQuiz extends Component {
 
     }
     render() {
-        const customStyle = { marginright: "150px" }
         return (
             <div className="CreateQuiz">
                 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
 
                 <MuiThemeProvider>
-                <p> Teacher Instructions </p>
-                    <p> 1.Total 5 questions </p>
+                    <div style={style1}>
+                    <p> Teacher Instructions </p>
+                    <p> 1.Each quiz has two questions </p>
                     <p> 2.Each question carry 3 marks </p>
-                    <p> 3.Not time based</p>
-                    <p> 4.Expected to know arthematic operations </p>
-                    <div>
+                    <p> 3.This is Not time based quizzes</p>
+                    <p> 4.Questions are based on student level </p>
+                    </div>
+                    <div style={style1}>
                         <label>
                         <Link to = "/" >
-                        <RaisedButton label="Back" primary={true} style={style}/>
+                        <RaisedButton label="Back" primary={true} style={style1}/>
                      </Link>
                      </label>
 
                         <label>
-                            <RaisedButton label="Continue" primary={true} style={style} onClick={(event) => this.StartQuizPage()} />
+                            <RaisedButton label="Continue" primary={true} style={style1} onClick={(event) => this.StartQuizPage()} />
                         </label>
                     </div>
                 </MuiThemeProvider>
@@ -67,8 +61,8 @@ class CreateQuiz extends Component {
     }
 }
 
-const style = {
-    margin: 15,
+const style1 = {
+    textAlign: 'center',
 };
 
 export default CreateQuiz;

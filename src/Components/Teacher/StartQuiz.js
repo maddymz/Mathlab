@@ -10,6 +10,7 @@ import Header from '../Header/Header';
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
  * @since : 19 Nov, 2019
+ * @version : 2.0
  */
 
 class StartQuiz extends Component{
@@ -31,6 +32,12 @@ class StartQuiz extends Component{
         
 		//this.props.push('./Teacher/StartQuiz', this.state)
     }
+    QuestionsPage() {
+        console.log(" inside Question page !!");
+        
+        this.props.history.push('/Teacher/Questions', this.state)
+        
+    }
     
     sendMessage () {
         this.props.setHeaderMessage("Lets start the quiz!");
@@ -43,26 +50,32 @@ class StartQuiz extends Component{
             <div>
 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
 					</div>
-                <div>
-                    <p>1. How much is the addition of 2 and 3 numbers?</p>
-                    <p>2.Multiply 2 and 3 numbers.</p>
-                    <p>3.Add 2,3,4and 5 numbers.</p>
-                    <p>4.Divide 10 and 5.</p>
-                    <p>5.Subtract 21from 35 and add 45 to it.</p>
+                <div style={style1}>
+                  Instructions to create Quiz 
+                  <p>1.To add questions please click on add</p>
+                  <p>2.Add question in the question field</p> 
+                  <p>3.Add answer in the answer field</p>
+                  <p>5.To go back please click on Quit </p>
                 <label>
                 <Link to = "/teacher/createquiz" >
                         <RaisedButton label="Quit" primary={true} style={style} />
                     </Link>
                 </label>
                 <label>
-                    <Link to = "/" >
-                        <RaisedButton label="Add" primary={true} style={style} onClick = {(event) => this.sendMessage()}/>
+                    <Link to = "/teacher/Questions" >
+                        <RaisedButton label="Add" primary={true} style={style} onClick = {(event) => this.QuestionsPage()}/>
                      </Link>
                 </label>
                 </div>
             </MuiThemeProvider>
         </div>
+
+        
         );
     }
 }
+const style1 = {
+    textAlign: 'center',
+};
+  
 export default StartQuiz;
