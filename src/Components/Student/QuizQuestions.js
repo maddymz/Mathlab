@@ -31,7 +31,7 @@ class QuizQuestions extends Component {
 
         for (var i = 0; i < quizData.length; i++) {
             var quiz = quizData[i];
-            if (quiz.quizId == this.props.location.state.selectedID) {
+            if (quiz.quizId === this.props.location.state.selectedID) {
                 for (var j = 0; j < quiz.questions.length; j++) {
                     this.state.questions.push(quiz.questions[j])
                 }
@@ -44,7 +44,7 @@ class QuizQuestions extends Component {
             this.state.currentQuestionNumber++;
             this.forceUpdate()
 
-            if(this.state.currentQuestionNumber + 1 == this.state.questions.length) {
+            if(this.state.currentQuestionNumber + 1 === this.state.questions.length) {
                 this.setState({submittable: true})
             }
 

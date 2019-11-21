@@ -11,65 +11,29 @@ import update from 'immutability-helper'
  */
 
 
-const DragnDrop = () =>{
-  const [dropAreas, setDropAreas] = useState([
-    { accepts: [DraggableType.BOX], lastDroppedItem: null },
-    { accepts: [DraggableType.OPERATOR], lastDroppedItem: null },
-  ])
-  const [boxes] = useState([
-    {name: 'numBox', type: DraggableType.BOX},
-    {name: 'operator', type: DraggableType.OPERATOR}
-  ])
 
-  const [droppedBoxNames, setDroppedBoxNames] = useState([])
-
-  function isDropped(boxName) {
-    return droppedBoxNames.indexOf(boxName) > -1
-  }
-  const handleDrop = useCallback(
-    (index, item) => {
-      const { name } = item
-      setDroppedBoxNames(
-        update(droppedBoxNames, name ? { $push: [name] } : { $push: [] }),
-      )
-      setDropAreas(
-        update(dropAreas, {
-          [index]: {
-            lastDroppedItem: {
-              $set: item,
-            },
-          },
-        }),
-      )
-    },
-    [droppedBoxNames, dropAreas],
-  )
-  
+export default function Container() {
   return (
     <div>
       <div style={{ overflow: 'hidden', clear: 'both' }}>
-        {dropAreas.map(({ accepts, lastDroppedItem }, index) => (
-          <DropArea
-            accept={accepts}
-            lastDroppedItem={lastDroppedItem}
-            onDrop={item => handleDrop(index, item)}
-            key={index}
-          />
-        ))}
-      </div>
-
-      <div style={{ overflow: 'hidden', clear: 'both' }}>
-        {boxes.map(({ name, type }, index) => (
-          <Box
-            name={name}
-            type={type}
-            isDropped={isDropped(name)}
-            key={index}
-          />
-        ))}
+        <DropArea />
+        <Box name="1" />
+        <Box name="2" />
+        <Box name="3" />
+        <Box name="4" />
+        <Box name="5" />
+        <Box name="6" />
+        <Box name="7" />
+        <Box name="8" />
+        <Box name="9" />
+        <Box name="0" />
+        <Box name="+" />
+        <Box name="-" />
+        <Box name="*" />
+        <Box name="/" />
+        <Box name="(" />
+        <Box name=")" />
       </div>
     </div>
   )
 }
-
-export default DragnDrop
