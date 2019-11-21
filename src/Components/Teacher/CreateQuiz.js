@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Link} from 'react-router-dom';
 
 import './Teacher.css';
 // eslint-disable-next-line 
@@ -40,16 +41,20 @@ class CreateQuiz extends Component {
         const customStyle = { marginright: "150px" }
         return (
             <div className="CreateQuiz">
+                						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
+
                 <MuiThemeProvider>
-                    <p> Quiz Instructions </p>
-                    <p style={customStyle}> 1.Total 5 questions </p>
-                    <p style={customStyle}> 2.Each question carry 3 marks </p>
+                <p> Teacher Instructions </p>
+                    <p> 1.Total 5 questions </p>
+                    <p> 2.Each question carry 3 marks </p>
                     <p> 3.Not time based</p>
                     <p> 4.Expected to know arthematic operations </p>
                     <div>
                         <label>
-                            <RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.sendMessage()} />
-                        </label>
+                        <Link to = "/" >
+                        <RaisedButton label="Back" primary={true} style={style}/>
+                     </Link>
+                     </label>
 
                         <label>
                             <RaisedButton label="Continue" primary={true} style={style} onClick={(event) => this.StartQuizPage()} />

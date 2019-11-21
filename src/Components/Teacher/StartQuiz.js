@@ -9,7 +9,7 @@ import Header from '../Header/Header';
 
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
- * @since : 02 Nov, 2019
+ * @since : 19 Nov, 2019
  */
 
 class StartQuiz extends Component{
@@ -30,7 +30,8 @@ class StartQuiz extends Component{
         this.props.history.push('/Login/LoginScreen', this.state)
         
 		//this.props.push('./Teacher/StartQuiz', this.state)
-	}
+    }
+    
     sendMessage () {
         this.props.setHeaderMessage("Lets start the quiz!");
     }
@@ -49,8 +50,8 @@ class StartQuiz extends Component{
                     <p>4.Divide 10 and 5.</p>
                     <p>5.Subtract 21from 35 and add 45 to it.</p>
                 <label>
-                <Link to = "/" >
-                        <RaisedButton label="Quit" primary={true} style={style} onClick = {(event) => this.LoginPage()}/>
+                <Link to = "/teacher/createquiz" >
+                        <RaisedButton label="Quit" primary={true} style={style} />
                     </Link>
                 </label>
                 <label>
