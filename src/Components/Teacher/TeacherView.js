@@ -38,11 +38,11 @@ class TeacherView extends Component {
                         <RaisedButton  label="Logout" primary={true} style={style} onClick={(event) => this.logout(event)}/>
 
                     </AppBar>
-                    <p style={customStyle}>Want to Create Quiz?</p>
+                    <p style={style1}>Want to Create Quiz?</p>
                     <br/>
-                    {/* <Link to = "/quiz" > */}
-                        <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.sendMessage()}/>   
-                                         {/* </Link> */}
+                    <div style={style1}>
+                        <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.sendMessage()}/> 
+                    </div>  
                     <br/>
                 </div>
             </MuiThemeProvider>
@@ -52,5 +52,8 @@ class TeacherView extends Component {
 }
 const style = {
     margin: 15,
+};
+const style1 = {
+    textAlign: 'center',
 };
 export default TeacherView;
