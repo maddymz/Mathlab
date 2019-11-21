@@ -7,7 +7,7 @@ import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
-import { validExpression, setValidExpression, setExpression } from '../DragnDrop/box'
+import { validExpression, result, setValidExpression, setExpression } from '../DragnDrop/box'
 import Avatar from '@material-ui/core/Avatar';
 import { clearBoxes } from '../DragnDrop/dropArea';
 /**
@@ -24,8 +24,13 @@ class StudentPractice extends Component {
 		this.state = {
 			message: headerMessage,
 			username: this.props.location.state.username,
-			validity: validExpression
+			validity: validExpression,
+			result: result
 		}
+		setInterval(() => {
+			this.setState({ validity: validExpression })
+			this.setState({ result: result })
+		}, 1000);
 	}
 
 	goBackToStudent() {
@@ -58,22 +63,25 @@ class StudentPractice extends Component {
 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
 					</div>
 					<div>
-						<Paper style={style}>
-							<div className="drag-n-drop">
+						<Paper style={stylePaper}>
+							<div className="drag-n-drop" style={style}>
 								<DndProvider backend={HTML5Backend}>
 									<DragnDrop />
 								</DndProvider>
 							</div>
 						</Paper>
 					</div>
+					<div style={styleDiv}>
+						{this.state.validity ? <Avatar style={styleDiv} src={require('../../Assets/Images/True.png')} /> : <Avatar style={styleDiv} src={require('../../Assets/Images/False.png')} />}
+						<br />
+						{this.state.result}
+					</div>
 					<div>
-						{/* {image} */}
-						{this.state.validity ? <Avatar src={require('../../Assets/Images/True.png')} /> : <Avatar src={require('../../Assets/Images/False.png')} />}
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
 						<RaisedButton label="Clear" primary={true} style={style} onClick={(event) => this.clearDropArea()} />
 					</div>
 				</MuiThemeProvider>
-			</div>
+			</div >
 
 		);
 	}
@@ -83,13 +91,25 @@ const style = {
 	margin: 15,
 };
 
+const stylePaper = {
+	margin: 15,
+	width: 'fit-content',
+	display: 'inline-block'
+};
+
+const styleDiv = {
+	margin: 'auto',
+	fontWeight: 'Bold',
+	fontSize: 20
+}
+
 // export class setVal extends StudentPractice {
 // 	setVal(val) {
 // 		super.setValidity(val)
 // 	}
 // }
 
-export function a() {
-	StudentPractice.setState({ validity: false })
-}
+// export function a() {
+// 	StudentPractice.setState({ validity: false })
+// }
 export default StudentPractice;

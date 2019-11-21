@@ -56,4 +56,11 @@ const style = {
 	margin: 15,
 };
 
+
+const stylePaper = {
+	margin: 15,
+	width: 'fit-content',
+	display: 'inline-block'
+};
+
 export default StudentQuiz;

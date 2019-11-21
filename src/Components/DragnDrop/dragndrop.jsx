@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from './box';
 import DropArea from './dropArea';
+import { Grid } from '@material-ui/core';
 /**
  * @author: Madhukar Raj
  * @version: 1.0
@@ -21,13 +22,13 @@ export default function Container() {
           <DropArea />
           <Box name="1" />
           <Box name="2" />
-          <Box name="3" />
+          <Box name="3" /><br />
           <Box name="4" />
           <Box name="5" />
-          <Box name="6" />
+          <Box name="6" /><br />
           <Box name="7" />
           <Box name="8" />
-          <Box name="9" />
+          <Box name="9" /><br />
           <Box name="0" />
           <Box name="+" />
           <Box name="-" />
@@ -40,25 +41,49 @@ export default function Container() {
       <div>
         <div style={{ overflow: 'hidden', clear: 'both' }}>
           <DropArea />
-          <Box name="1" />
-          <Box name="2" />
-          <Box name="3" />
-          <Box name="4" />
-          <Box name="5" />
-          <Box name="6" />
-          <Box name="7" />
-          <Box name="8" />
-          <Box name="9" />
-          <Box name="0" />
-          <Box name="+" />
-          <Box name="-" />
-          <Box name="*" />
-          <Box name="/" />
-          <Box name="(" />
-          <Box name=")" />
+          <div style={styleDiv1}>
+            <div style={styleDiv2}>
+              <Box name="1" />
+              <Box name="2" />
+              <Box name="3" />
+            </div>
+            <div style={styleDiv2}>
+              <Box name="4" />
+              <Box name="5" />
+              <Box name="6" />
+            </div>
+            <div style={styleDiv2}>
+              <Box name="7" />
+              <Box name="8" />
+              <Box name="9" />
+            </div>
+            <div style={styleDiv2}>
+              <Box name="0" />
+            </div>
+            <div style={styleDiv2}>
+              <Box name="+" />
+              <Box name="-" />
+              <Box name="*" />
+            </div>
+            <div style={styleDiv2}>
+              <Box name="/" />
+              <Box name="(" />
+              <Box name=")" />
+            </div>
+          </div>
         </div>
       </div>
     )
   }
+}
 
+const styleDiv2 = {
+  display: 'flex',
+  justifyContent: 'center'
+}
+
+const styleDiv1 = {
+  display: 'grid',
+  justifyContent: 'center',
+  marginTop: '50px'
 }

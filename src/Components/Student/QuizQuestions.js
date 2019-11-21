@@ -8,6 +8,7 @@ import './Student.css';
 import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 import data from '../../Assets/quizzes.json'
+import { Avatar } from 'material-ui';
 
 /**
  * @author Sajith Thattazhi
@@ -21,7 +22,8 @@ class QuizQuestions extends Component {
             username: props.location.state.username,
             questions: [],
             currentQuestionNumber: 0,
-            submittable: false
+            submittable: false,
+            validity: false
         }
         this.loadQuestions();
     }
@@ -44,8 +46,8 @@ class QuizQuestions extends Component {
             this.state.currentQuestionNumber++;
             this.forceUpdate()
 
-            if(this.state.currentQuestionNumber + 1 === this.state.questions.length) {
-                this.setState({submittable: true})
+            if (this.state.currentQuestionNumber + 1 === this.state.questions.length) {
+                this.setState({ submittable: true })
             }
 
         }
@@ -69,37 +71,42 @@ class QuizQuestions extends Component {
                         {this.state.questions[this.state.currentQuestionNumber].question}
                     </div>
                     <div>
-                        <Paper style={style}>
-                            <div className="drag-n-drop">
+                        <Paper style={stylePaper}>
+                            <div className="drag-n-drop" style={style}>
                                 <DndProvider backend={HTML5Backend}>
                                     <DragnDrop />
                                 </DndProvider>
                             </div>
                         </Paper>
                     </div>
-                    <div>
+                    <div style={styleDiv}>
+                        {this.state.validity ? <Avatar style={styleDiv} src={require('../../Assets/Images/True.png')} /> : <Avatar style={styleDiv} src={require('../../Assets/Images/False.png')} />}
+                        <br />
+                        {this.state.result}
+                    </div>
+                    <div >
                         {
                             (!this.state.submittable)
-                            ? 
-                            <RaisedButton
-                                label="Next"
-                                primary={true}
-                                style={style}
-                                onClick={(event) => this.nextQuestion()}
-                            />
-                            :
-                            <RaisedButton 
-                                label="Submit Quiz" 
-                                primary={true} 
-                                style={style} 
-                                onClick={(event) => this.submitQuiz()} 
-                            />
+                                ?
+                                <RaisedButton
+                                    label="Next"
+                                    primary={true}
+                                    style={style}
+                                    onClick={(event) => this.nextQuestion()}
+                                />
+                                :
+                                <RaisedButton
+                                    label="Submit Quiz"
+                                    primary={true}
+                                    style={style}
+                                    onClick={(event) => this.submitQuiz()}
+                                />
                         }
-                        <RaisedButton 
-                            label="Back" 
-                            primary={true} 
-                            style={style} 
-                            onClick={(event) => this.goBackToQuizSelection()} 
+                        <RaisedButton
+                            label="Back"
+                            primary={true}
+                            style={style}
+                            onClick={(event) => this.goBackToQuizSelection()}
                         />
                     </div>
                 </MuiThemeProvider>
@@ -110,6 +117,19 @@ class QuizQuestions extends Component {
 
 const style = {
     margin: 15,
+};
+
+const styleDiv = {
+    margin: 'auto',
+    fontWeight: 'Bold',
+    fontSize: 20
+}
+
+
+const stylePaper = {
+    margin: 15,
+    width: 'fit-content',
+    display: 'inline-block'
 };
 
 export default QuizQuestions;
