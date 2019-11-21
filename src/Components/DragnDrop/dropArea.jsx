@@ -30,6 +30,7 @@ export function clearBoxes() {
   boxes = [];
   showBox=false;  
   renderComponent(DropArea);
+
 }
 
 const DropArea = () => {

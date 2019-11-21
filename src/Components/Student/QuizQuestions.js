@@ -12,6 +12,7 @@ import { Avatar } from 'material-ui';
 import { result } from '../DragnDrop/box'
 import { clearBoxes } from '../DragnDrop/dropArea';
 
+
 /**
  * @author Sajith Thattazhi
  * @version 1.0
@@ -25,7 +26,8 @@ class QuizQuestions extends Component {
             questions: [],
             currentQuestionNumber: 0,
             submittable: false,
-            validity: false
+            validity: false,
+            result: ''
         }
         this.loadQuestions();
     }
@@ -74,8 +76,16 @@ class QuizQuestions extends Component {
         this.setState({result: result})
     }
 
-    render() {
+    evaluate() {
+        if (this.state.questions[this.state.currentQuestionNumber].answer === String(result)) {
+            this.setState({ validity: true })
+        } else {
+            this.setState({ validity: false })
+        }
+        this.setState({result: result})
+    }
 
+    render() {
         return (
             <div className="Question">
                 <MuiThemeProvider>
@@ -98,6 +108,12 @@ class QuizQuestions extends Component {
                         {this.state.result}
                     </div>
                     <div >
+                        <RaisedButton
+                            label="Evaluate"
+                            primary={true}
+                            style={style}
+                            onClick={(event) => this.evaluate()}
+                        />
                         {
                             (!this.state.submittable)
                                 ?
