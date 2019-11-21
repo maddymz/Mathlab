@@ -7,7 +7,7 @@ import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
-import validExpression from '../DragnDrop/box'
+import { validExpression, setValidExpression, setExpression } from '../DragnDrop/box'
 import Avatar from '@material-ui/core/Avatar';
 
 /**
@@ -30,15 +30,21 @@ class StudentPractice extends Component {
 		this.props.history.push('/student', this.state.username)
 	}
 
-	render() {
-		var image;
-		console.log(validExpression);
-		
+	getImage() {
 		if (validExpression) {
-			image = <Avatar src={require('../../Assets/Images/True.png')} />
+			return <Avatar src={require('../../Assets/Images/True.png')} />
 		} else {
-			image = <Avatar src={require('../../Assets/Images/False.png')} />
+			return <Avatar src={require('../../Assets/Images/False.png')} />
 		}
+	}
+
+	clearDropArea() {
+		setValidExpression(false);
+		setExpression('');
+	}
+
+	render() {
+		var image = this.getImage();
 		return (
 			<div className="StudentPractice">
 				<MuiThemeProvider>
@@ -57,6 +63,7 @@ class StudentPractice extends Component {
 					<div>
 						{image}
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
+						<RaisedButton label="Clear" primary={true} style={style} onClick={(event) => this.clearDropArea()} />
 					</div>
 				</MuiThemeProvider>
 			</div>

@@ -20,9 +20,25 @@ const style = {
   float: 'left',
 }
 
-var validExpression = false;
-var result;
+export var validExpression = true;
+export var result;
+var expression = '';
 
+export function setValidExpression(value) {
+  validExpression = value
+}
+
+export function setExpression(value) {
+  expression = value
+}
+
+const renderBox = (name) => {
+  return (
+    <Box
+      name={name}
+    />
+  )
+}
 const Box = ({ name }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { name, type: ItemTypes.BOX },
@@ -30,10 +46,12 @@ const Box = ({ name }) => {
       const dropResult = monitor.getDropResult()
       if (item && dropResult) {
         alert(`You dropped ${item.name} into ${dropResult.name}!`);
+        renderBox(name)
         var logic = new EvaluationLogic();
-        var tempExpression = "23+3";
-        var res = logic.evaluate(tempExpression);
-        validExpression = isNaN(res)
+        expression = expression + item.name
+        var res = logic.evaluate(expression);
+        validExpression = !isNaN(res)
+        console.log(expression, res, validExpression);
         result = null;
         if (validExpression) {
           result = res;
@@ -44,12 +62,10 @@ const Box = ({ name }) => {
       isDragging: monitor.isDragging(),
     }),
   })
-
   const opacity = isDragging ? 0.4 : 1
   return (
     <div ref={drag} style={{ ...style, opacity }}>
       {name}
-
     </div>
   )
 }
