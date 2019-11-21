@@ -10,6 +10,7 @@ import StartQuiz from './Components/Teacher/StartQuiz';
 import AdminPage from './Components/Admin/Adminpage'
 import AdminProfView from './Components/Admin/AdminProfView'
 import AdminStudentView from './Components/Admin/AdminStudentView'
+import Questions from './Components/Teacher/Questions';
 
 /**
  * @author: Madhukar Raj
@@ -35,6 +36,7 @@ class App extends Component {
             <Route exact path='/admin/student' component={AdminStudentView}/>
             <Route exact path='/teacher/startquiz' component={StartQuiz}/>
             <Route exact path='/teacher/createquiz' component={CreateQuiz}/>
+            <Route exact path='/teacher/Questions' component={Questions}/>
           </Switch>
         </div>  
       </BrowserRouter>
