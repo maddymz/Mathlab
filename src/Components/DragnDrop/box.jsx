@@ -2,6 +2,7 @@ import React from 'react'
 import { useDrag } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
 import EvaluationLogic from './EvaluationLogic'
+import StudentPractice, { a } from '../Student/StudentPractice.js'
 
 /**
  * @author: Madhukar Raj
@@ -22,6 +23,18 @@ const style = {
   float: 'left',
 }
 
+export var validExpression = true;
+export var result;
+var expression = '';
+
+export function setValidExpression(value) {
+  validExpression = value
+}
+
+export function setExpression(value) {
+  expression = value
+}
+
 const renderBox = (name) => {
   return (
     <Box
@@ -35,11 +48,22 @@ const Box = ({ name }) => {
     end: (item) => {
       console.log("item", item)
       if (item) {
+        // var obj=new StudentPractice();
+        
         alert(`You dropped ${item.name}`);
         renderBox(name)
         var logic = new EvaluationLogic();
-        var tempExpression = "2+3";
-        console.log(logic.evaluate(tempExpression));
+        expression = expression + item.name
+        var res = logic.evaluate(expression);
+        validExpression = !isNaN(res)
+        console.log(expression, res, validExpression);
+        a();
+        result = null;
+
+        // new setVal(validExpression)
+        if (validExpression) {
+          result = res;
+        }
       }
     },
     collect: monitor => ({

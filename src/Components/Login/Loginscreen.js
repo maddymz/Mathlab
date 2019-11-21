@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './LoginScreen.css';
 import data from '../../Assets/users.json'
-
+import { setUserData } from '../DragnDrop/dragndrop'
 /**
  * @author: Madhukar Raj
  * @version: 1.0
@@ -35,6 +35,7 @@ class Login extends Component {
         for (var i = 0; i < userData.length; i++) {
           if (username === userData[i].username) {
             if (password === userData[i].password) {
+              setUserData(userData[i].grade);
               switch (userData[i].role) {
                 case "student":
                   this.props.history.push('/student', userData[i].name)

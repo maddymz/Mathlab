@@ -25,11 +25,17 @@ var showBox = false;
 var boxName = "";
 var boxes = [];
 
+export function clearBoxes() {
+  console.log("bhwf")
+  boxes = [];
+  showBox=false;
+  
+}
+
 const DropArea = () => {
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: ItemTypes.BOX,
     drop(item) {
-
       boxName = item.name;
       showBox = true;
       boxes.push(<Box name={boxName} />)
