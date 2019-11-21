@@ -8,8 +8,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, { Component } from 'react';
 import {Modal, Button, Header, Row, Col, Form} from 'semantic-ui-react';
-import {ButtonToolbar} from 'react-bootstrap';
-import {render} from 'react-dom';
 import Checkbox from '@material-ui/core/Checkbox';
 
 import HeaderBar from '../Header/Header';

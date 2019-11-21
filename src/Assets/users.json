@@ -4,15 +4,15 @@
         "name": "Viraj Khatri",
         "password": "virajkhatri",
         "role": "student",
-        "email": "vkhatri2@asu.edu"
-        "grade":"1
+        "email": "vkhatri2@asu.edu",
+        "grade":"1"
     },
     {
         "username": "scheruk5",
         "name": "Surya Cherukuri",
         "password": "surya",
         "role": "student",
-        "email": "scheruk5@asu.edu"
+        "email": "scheruk5@asu.edu",
         "grade":"4"
 
     },
