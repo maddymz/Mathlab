@@ -81,7 +81,7 @@ class StudentPractice extends Component {
 						<RaisedButton label="Clear" primary={true} style={style} onClick={(event) => this.clearDropArea()} />
 					</div>
 				</MuiThemeProvider>
-			</div >
+			</div>
 
 		);
 	}
@@ -102,14 +102,4 @@ const styleDiv = {
 	fontWeight: 'Bold',
 	fontSize: 20
 }
-
-// export class setVal extends StudentPractice {
-// 	setVal(val) {
-// 		super.setValidity(val)
-// 	}
-// }
-
-// export function a() {
-// 	StudentPractice.setState({ validity: false })
-// }
 export default StudentPractice;
