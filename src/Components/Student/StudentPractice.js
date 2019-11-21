@@ -7,7 +7,7 @@ import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
-import { validExpression, result, setValidExpression, setExpression } from '../DragnDrop/box'
+import { validExpression, result, setValidExpression, setExpression, clearResult } from '../DragnDrop/box'
 import Avatar from '@material-ui/core/Avatar';
 import { clearBoxes } from '../DragnDrop/dropArea';
 /**
@@ -49,6 +49,7 @@ class StudentPractice extends Component {
 	clearDropArea() {
 		setValidExpression(false);
 		setExpression('');
+		clearResult();
 		clearBoxes();
 	}
 
