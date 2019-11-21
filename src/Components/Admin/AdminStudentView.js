@@ -16,6 +16,7 @@ import {render} from 'react-dom';
 import Checkbox from '@material-ui/core/Checkbox';
 import { len } from 'gl-matrix/src/gl-matrix/vec2';
 import StudentModal from './StudentModal';
+import HeaderBar from '../Header/Header';
 //var Modal = require('react-bootstrap-modal');
 
 /**
@@ -62,8 +63,10 @@ class AdminStudentView extends Component {
       students.push(myObj);
       console.log(students);
       localStorage.setItem('students', JSON.stringify(students));
-    
+      alert("Successfully added Student");
       this.setState({data:students});
+      var frm = document.getElementsByName('contact-form')[0];
+      frm.reset();  // Reset all form data
       
   }
   handleInputChange(event) {
@@ -106,10 +109,7 @@ render(){
         <div>
           <MuiThemeProvider>
             <div>
-              <AppBar
-               title="Admin"
-               color="Black"
-              />
+            <HeaderBar message="Admin" showLogoutButton = {true} parentProps={this.props} />
               <List style={styleList}>
               
               {items.map((value, key) => {
@@ -163,7 +163,7 @@ render(){
           </Modal.Header>
           <Modal.Content>
           <Modal.Description>
-          <form onSubmit={this.handleSubmit}>
+          <form name = 'contact-form' onSubmit={this.handleSubmit}>
             <label>
               FirstName:
               <input name="firstname" type="text" onChange={this.handleInputChange}  />
@@ -251,7 +251,7 @@ function studentModal(props){
       </Modal.Header>
       <Modal.Content>
       <Modal.Description>
-      <form>
+      <form >
         <label>
           FirstName:
           <input type="text"  />

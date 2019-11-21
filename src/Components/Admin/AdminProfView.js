@@ -16,6 +16,7 @@ import {render} from 'react-dom';
 import Checkbox from '@material-ui/core/Checkbox';
 import { len } from 'gl-matrix/src/gl-matrix/vec2';
 import StudentModal from './StudentModal';
+import HeaderBar from '../Header/Header';
 //var Modal = require('react-bootstrap-modal');
 
 /**
@@ -108,10 +109,7 @@ render(){
         <div>
           <MuiThemeProvider>
             <div>
-              <AppBar
-               title="Admin"
-               color="Black"
-              />
+            <HeaderBar message={this.state.message} showLogoutButton = {true} parentProps={this.props} />
               <List style={styleList}>
               
               {items.map((value, key) => {
