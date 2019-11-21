@@ -18,18 +18,23 @@ const style = {
   textAlign: 'center',
   fontSize: '1rem',
   lineHeight: 'normal',
-  float: 'right'
+  float: 'right',
+  color: 'black'
 }
 var showBox = false;
 var boxName = "";
+var boxes = [];
 
 const DropArea = () => {
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: ItemTypes.BOX,
-    drop: (item) => ({ name: 'DropArea'
-                     },
-                     boxName = item.name,
-                     showBox = true),
+    drop(item) {
+
+      boxName = item.name;
+      showBox = true;
+      boxes.push(<Box name={boxName} />)
+      return 'DropArea'
+    },
     collect: monitor => ({
       isOver: monitor.isOver(),
       canDrop: monitor.canDrop(),
@@ -44,8 +49,9 @@ const DropArea = () => {
   }
   return (
     <div ref={drop} style={{ ...style, backgroundColor }}>
-      {console.log("boxname",boxName)}
-      {showBox ? <Box name={boxName} /> : (isActive ? 'Release to drop' : 'Drag a box here')}
+      {showBox ? boxes.map((value, key) => {
+        return value
+      }) : (isActive ? 'Release to drop' : 'Drag a box here')}
     </div>
   )
 }
