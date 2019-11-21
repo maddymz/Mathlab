@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
+import Header from '../Header/Header';
 import RaisedButton from 'material-ui/RaisedButton';
 
 /**
@@ -13,8 +14,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 class AdminPage extends Component {
 
   constructor(props) {
-    super(props);
-    this.state={};
+		super(props);
+		var headerMessage = "Welcome Admin";
+		this.state = {
+			message: headerMessage
+		}
   }
 
   handleClick(type) {
@@ -26,10 +30,7 @@ class AdminPage extends Component {
       <div>
         <MuiThemeProvider>
           <div>
-            <AppBar
-              title="Admin"
-              color="Black"
-            />
+          <Header message={this.state.message} showLogoutButton = {true} parentProps={this.props} />
             <RaisedButton label="Student" primary={true} style={style} onClick={(event) => this.handleClick("student")} />
             <RaisedButton label="Professor" primary={true} style={style} onClick={(event) => this.handleClick("prof")} />
             <RaisedButton label="Quiz" primary={true} style={style} onClick={(event) => this.handleClick("quiz")} />
