@@ -2,7 +2,6 @@ import React from 'react'
 import { useDrag } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
 import EvaluationLogic from './EvaluationLogic'
-// import StudentPractice, { a } from '../Student/StudentPractice.js'
 
 /**
  * @author: Madhukar Raj
@@ -47,17 +46,14 @@ const Box = ({ name }) => {
     item: { name, type: ItemTypes.BOX },
     end: (item) => {
       console.log("item", item)
+
       if (item) {
-        // var obj=new StudentPractice();
-        
-        // alert(`You dropped ${item.name}`);
         renderBox(name)
         var logic = new EvaluationLogic();
         expression = expression + item.name
         var res = logic.evaluate(expression);
         validExpression = !isNaN(res)
         console.log(expression, res, validExpression);
-        // a();
         result = null;
         if (validExpression) {
           result = res;

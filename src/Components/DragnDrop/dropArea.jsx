@@ -23,12 +23,12 @@ const style = {
 var showBox = false;
 var boxName = "";
 var boxes = [];
+// var clearClicked = false
 
 export function clearBoxes() {
   console.log("bhwf")
   boxes = [];
   showBox = false;
-  renderComponent(DropArea)
 }
 
 const DropArea = () => {
