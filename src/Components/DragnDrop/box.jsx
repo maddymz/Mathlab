@@ -8,6 +8,8 @@ import EvaluationLogic from './EvaluationLogic'
  * @version: 1.0
  * @author: Viraj Khatri
  * @version: 2.0
+ * @author: Sajith Thattazhi
+ * @version: 3.0
  */
 
 const style = {
@@ -30,11 +32,10 @@ const renderBox = (name) => {
 const Box = ({ name }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { name, type: ItemTypes.BOX },
-    end: (item, monitor) => {
-      const dropResult = monitor.getDropResult()
-      console.log("drop result", dropResult, item)
-      if (item && dropResult) {
-        alert(`You dropped ${item.name} into ${dropResult.name}!`);
+    end: (item) => {
+      console.log("item", item)
+      if (item) {
+        alert(`You dropped ${item.name}`);
         renderBox(name)
         var logic = new EvaluationLogic();
         var tempExpression = "2+3";
