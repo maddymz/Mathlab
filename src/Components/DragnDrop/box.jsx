@@ -46,8 +46,8 @@ const Box = ({ name }) => {
     item: { name, type: ItemTypes.BOX },
     end: (item) => {
       console.log("item", item)
-      if (item) {        
-        alert(`You dropped ${item.name}`);
+
+      if (item) {
         renderBox(name)
         var logic = new EvaluationLogic();
         expression = expression + item.name
