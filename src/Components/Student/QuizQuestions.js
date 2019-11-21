@@ -9,7 +9,7 @@ import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
 import data from '../../Assets/quizzes.json'
 import { Avatar } from 'material-ui';
-import { result } from '../DragnDrop/box'
+import { result, setExpression, clearResult } from '../DragnDrop/box'
 import { clearBoxes } from '../DragnDrop/dropArea';
 
 
@@ -30,6 +30,9 @@ class QuizQuestions extends Component {
             result: ''
         }
         this.loadQuestions();
+        setInterval(() => {
+            this.evaluate();
+        }, 500);
     }
 
     loadQuestions() {
@@ -54,15 +57,24 @@ class QuizQuestions extends Component {
                 this.setState({ submittable: true })
             }
         }
+        clearResult();
+        setExpression('');
+        this.setState({ result: '' })
         clearBoxes();
     }
 
     goBackToQuizSelection() {
-        this.props.history.push('/student/quiz', this.state)
+        this.props.history.push('/student/quiz', this.state);
+        clearResult();
+        setExpression('');
+        this.setState({ result: '' })
         clearBoxes();
     }
 
     submitQuiz() {
+        clearResult();
+        setExpression('');
+        this.setState({ result: '' })
         this.props.history.push('/student/quiz', this.state)
         clearBoxes();
     }
@@ -73,7 +85,7 @@ class QuizQuestions extends Component {
         } else {
             this.setState({ validity: false })
         }
-        this.setState({result: result})
+        this.setState({ result: result })
     }
 
     evaluate() {
@@ -82,7 +94,7 @@ class QuizQuestions extends Component {
         } else {
             this.setState({ validity: false })
         }
-        this.setState({result: result})
+        this.setState({ result: result })
     }
 
     render() {
@@ -108,12 +120,6 @@ class QuizQuestions extends Component {
                         {this.state.result}
                     </div>
                     <div >
-                        <RaisedButton
-                            label="Evaluate"
-                            primary={true}
-                            style={style}
-                            onClick={(event) => this.evaluate()}
-                        />
                         {
                             (!this.state.submittable)
                                 ?

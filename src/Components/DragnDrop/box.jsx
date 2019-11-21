@@ -34,6 +34,10 @@ export function setExpression(value) {
   expression = value
 }
 
+export function clearResult() {
+  result = '';
+}
+
 const renderBox = (name) => {
   return (
     <Box
