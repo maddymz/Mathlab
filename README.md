@@ -33,7 +33,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `node src/Assets/Server/server.js`
+### `node server.js`
+
+Navigate to src/Assets/Server/ and run the above command
 
 Runs the server to Handle all the API calls hit by the client
 
