@@ -98,7 +98,19 @@ for(var i=0; i<Questiondata.length;i++) {
   Questiondata = JSON.parse(rawdata);
  res.status(200).json({"data": Questiondata})
 
-})
+});
+
+app.post('/addStudent', function(req, res) {
+    console.log(req.body);
+    fs.writeFileSync('./../users.json', JSON.stringify(req.body));
+
+  });
+
+app.post('/deleteStudent', function(req, res) {
+    console.log(req.body);
+    fs.writeFileSync('./../users.json', JSON.stringify(req.body));
+
+  });
 
 app.listen(3001, () => {
   console.log('Server Listening on port 3001');

@@ -72,15 +72,28 @@ class AdminStudentView extends Component {
       console.log(students);
       localStorage.setItem('students', JSON.stringify(students));
       alert("Successfully added Student");
-      this.setState({data:students});
-      var frm = document.getElementsByName('contact-form')[0];
-      frm.reset();  // Reset all form data
-      this.setState({flag:0});
-      this.setState({items:[]});
-      this.state.boxes.length=0;
-      this.state.items.length=0;
-      this.setState({check:[]});
-      
+      // this.setState({data:students});
+      // var frm = document.getElementsByName('contact-form')[0];
+      // frm.reset();  // Reset all form data
+      // this.setState({flag:0});
+      // this.setState({items:[]});
+      // this.state.boxes.length=0;
+      // this.state.items.length=0;
+      // this.setState({check:[]});
+      axios
+        .post('http://localhost:3001/addStudent', students)
+        .then(() => { 
+        this.setState({data:students});
+        var frm = document.getElementsByName('contact-form')[0];
+        frm.reset();  // Reset all form data
+        this.setState({flag:0});
+        this.setState({items:[]});
+        this.state.boxes.length=0;
+        this.state.items.length=0;
+        this.setState({check:[]});})
+        .catch(err => {
+          console.error(err);
+        });
   }
 
   handleInputChange(event) {
@@ -105,6 +118,7 @@ render(){
         transform: 'translate(-50%, 20%)',
         overflow: 'auto'
       };
+      //var data = require('../../Assets/users.json');
       var obj = JSON.parse(localStorage.getItem('students'));
       this.state.boxes.length=0;
       console.log("+++++++++", this.state);
@@ -246,13 +260,19 @@ function Delete(context){
   }
 }
       localStorage.setItem('students', JSON.stringify(students));
-      context.state.boxes.length=0;
-      context.state.items.length=0;
-      console.log("test", context.state.boxes);
-      context.setState({data:students});
-      console.log("test1", context.state.items);
-      context.setState({flag:0});
-      context.setState({check:[]});
+      
+      axios
+        .post('http://localhost:3001/deleteStudent', students)
+        .then(() => {context.state.boxes.length=0;
+          context.state.items.length=0;
+          console.log("test", context.state.boxes);
+          context.setState({data:students});
+          console.log("test1", context.state.items);
+          context.setState({flag:0});
+          context.setState({check:[]});})
+        .catch(err => {
+          console.error(err);
+        });
 }
 
 
