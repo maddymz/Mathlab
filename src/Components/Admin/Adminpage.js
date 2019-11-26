@@ -33,7 +33,7 @@ class AdminPage extends Component {
           <Header message={this.state.message} showLogoutButton = {true} parentProps={this.props} />
             <RaisedButton label="Student" primary={true} style={style} onClick={(event) => this.handleClick("student")} />
             <RaisedButton label="Professor" primary={true} style={style} onClick={(event) => this.handleClick("prof")} />
-            <RaisedButton label="Quiz" primary={true} style={style} onClick={(event) => this.handleClick("quiz")} />
+            {/* <RaisedButton label="Quiz" primary={true} style={style} onClick={(event) => this.handleClick("quiz")} /> */}
           </div>
         </MuiThemeProvider>
       </div>
