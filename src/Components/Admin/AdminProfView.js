@@ -121,6 +121,7 @@ render(){
       //var data = require('../../Assets/users.json');
       var obj = JSON.parse(localStorage.getItem('prof'));
       this.state.boxes.length=0;
+      this.state.items.length=0;
       console.log("+++++++++", this.state);
       if(this.state.flag===0){
         console.log("obj",obj);
@@ -186,7 +187,7 @@ render(){
               <Modal trigger={addButton} closeIcon>
           <Modal.Header>
 
-            Add Student
+            Add Professor
           </Modal.Header>
           <Modal.Content>
           <Modal.Description>

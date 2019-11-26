@@ -83,7 +83,7 @@ class AdminStudentView extends Component {
       axios
         .post('http://localhost:3001/addStudent', students)
         .then(() => { 
-        this.setState({data:students});
+          this.setState({data:students});
         var frm = document.getElementsByName('contact-form')[0];
         frm.reset();  // Reset all form data
         this.setState({flag:0});
@@ -121,6 +121,7 @@ render(){
       //var data = require('../../Assets/users.json');
       var obj = JSON.parse(localStorage.getItem('students'));
       this.state.boxes.length=0;
+      this.state.items.length=0;
       console.log("+++++++++", this.state);
       if(this.state.flag===0){
         console.log("obj",obj);
