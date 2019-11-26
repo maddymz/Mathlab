@@ -1,18 +1,18 @@
+'use strict'; 
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, { Component } from 'react';
 import {Modal, Button, Header, Row, Col, Form} from 'semantic-ui-react';
 import Checkbox from '@material-ui/core/Checkbox';
-import { len } from 'gl-matrix/src/gl-matrix/vec2';
 import HeaderBar from '../Header/Header';
-//var Modal = require('react-bootstrap-modal');
+import axios from "axios"
+
 
 /**
  * @author: Surya Cherukuri
@@ -26,13 +26,14 @@ import HeaderBar from '../Header/Header';
 
 class AdminStudentView extends Component {
 
-
   constructor(props){
     super(props);
     //this.state = {students:[], addModalShow : false}
-      this.state = {data:null,boxs:[],firstname: '', lastname: '', username: '', password: '', grade: '', email: ''}
-      this.handleInputChange = this.handleInputChange.bind(this);
+      this.state = {data:null,boxes:[],items:[],check:[],flag:0,firstname: '', lastname: '', username: '', password: '', grade: '', email: ''}
+      
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        //this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillMount(){
@@ -41,12 +42,24 @@ class AdminStudentView extends Component {
       var data = require('../../Assets/users.json');  
       //var obj = JSON.parse(JSON.stringify(data));
       localStorage.setItem('students', JSON.stringify(data));
+      this.setState({boxes:[],data:data,check:[]});
+      // var obj = JSON.parse(localStorage.getItem('students'));
+      // this.state.boxes.length=0;
+      // console.log("+++++++++", this.state);
+      // for (const [index, value] of obj.entries()) {
+      //   if(value.role === "student") {
 
-      this.setState({boxs:[],data:data});
+      //     //this.state.items.push(value);
+      //     this.state.check.push(0);
+       
+      //   }
+      // }
   }
+  
   handleSubmit(event) {
     event.preventDefault();
     console.log("yoooooooooooo");
+    //var fs = require('react-native-fs');
     var students = JSON.parse(localStorage.getItem('students'));
     const myObj = {
         name: this.state.firstname + " " +this.state.lastname,
@@ -62,8 +75,14 @@ class AdminStudentView extends Component {
       this.setState({data:students});
       var frm = document.getElementsByName('contact-form')[0];
       frm.reset();  // Reset all form data
+      this.setState({flag:0});
+      this.setState({items:[]});
+      this.state.boxes.length=0;
+      this.state.items.length=0;
+      this.setState({check:[]});
       
   }
+
   handleInputChange(event) {
     const target = event.target;
     const value = target.value;
@@ -73,10 +92,10 @@ class AdminStudentView extends Component {
       [name]: value
     });
   }
-
 render(){
+  console.log("second");
   var addButton =  <RaisedButton label="Add Student" primary={true} style={  {marginTop: '200px',marginLeft: '400px',marginRight: '100px',marginBottom: '100px'}} onClick={(event) => studentModal(addButton)}/>;
-    var deleteButton = <RaisedButton label="Delete Student" primary={true} style={ {marginTop: '200px',marginLeft: '300px',marginRight: '100px',marginBottom: '100px'}} onClick={(event) => Delete(boxes,obj,this)}/>;
+    var deleteButton = <RaisedButton label="Delete Student" primary={true} style={ {marginTop: '200px',marginLeft: '300px',marginRight: '100px',marginBottom: '100px'}} onClick={(event) => Delete(this)}/>;
     var styleList = {
         height: '350px',
         width: '450px',
@@ -86,19 +105,20 @@ render(){
         transform: 'translate(-50%, 20%)',
         overflow: 'auto'
       };
-      
       var obj = JSON.parse(localStorage.getItem('students'));
-      var items = [];
-      var boxes = [];
-      console.log(obj);
+      this.state.boxes.length=0;
+      console.log("+++++++++", this.state);
+      if(this.state.flag===0){
+        console.log("obj",obj);
       for (const [index, value] of obj.entries()) {
-        console.log(index);
-        
         if(value.role === "student") {
-          items.push(value)
+
+          this.state.items.push(value);
+          this.state.check.push(0);
         }
-  
       }
+    }
+
       return (
         
         <div>
@@ -107,21 +127,18 @@ render(){
             <HeaderBar message="Admin" showLogoutButton = {true} parentProps={this.props} />
               <List style={styleList}>
               
-              {items.map((value, key) => {
-               console.log("dbox",boxes);
+              {this.state.items.map((value, key) => {
                var i =0;
-                boxes.push(<Checkbox
-                  defaultChecked={false}
-                  onChange={handleChange(value.username, boxes,this)}
-                  value={value.username} 
-                  inputProps={{
-                    'aria-label': 'uncontrolled-checkbox',
-                    'ischeck': 'false'
-                  }}
-                />)
-                
-                console.log("key", key);
-                console.log("boxs",boxes[key]);
+               this.state.boxes.push(<Checkbox
+                checked= {this.state.check[key]}
+                onChange={handleChange(value.username, this.state.boxes,this)}
+                value={value.username} 
+                inputProps={{
+                  'aria-label': 'uncontrolled-checkbox',
+                  'ischeck': 'false'
+                }}  
+              />);
+            
               return (
                 <ListItem alignItems="flex-start">
                   <ListItemAvatar>
@@ -144,10 +161,11 @@ render(){
                       </React.Fragment>
                     }
                   />
-                 {boxes[key]}
+                 {this.state.boxes[key]}
                 </ListItem>
                 //<Divider variant="inset" component="li" />           
               )
+              i++;
               })}
               </List>
 
@@ -207,14 +225,15 @@ render(){
     }
 }
 
-function Delete(boxes, obj, context){
+function Delete(context){
 
 
   var students = JSON.parse(localStorage.getItem('students'));
   var listToDelete = [];
-  for(var i = 0;i<boxes.length;i++){
-    if(boxes[i].props.inputProps.ischeck==='true'){
-       listToDelete.push(boxes[i].props.value);
+  for(var i = 0;i<context.state.boxes.length;i++){
+    if(context.state.check[i]){
+      console.log("enter");
+       listToDelete.push(context.state.boxes[i].props.value);
     }
   }
   for( var i=0; i< students.length; i++){
@@ -227,10 +246,13 @@ function Delete(boxes, obj, context){
   }
 }
       localStorage.setItem('students', JSON.stringify(students));
-      boxes=[];
+      context.state.boxes.length=0;
+      context.state.items.length=0;
+      console.log("test", context.state.boxes);
       context.setState({data:students});
-      
-      
+      console.log("test1", context.state.items);
+      context.setState({flag:0});
+      context.setState({check:[]});
 }
 
 
@@ -290,20 +312,33 @@ function studentModal(props){
   );
 }
 
+
+
 const handleChange = (name,boxes,context) => event => {
-  console.log(boxes);
   
-  for(var i=0;i<boxes.length;i++)
+  console.log("here");
+
+  for(var i=0;i<context.state.boxes.length;i++)
   {
-    console.log("====>" + boxes[i].props.value + " " + name);
-    if(boxes[i].props.value === name)
+    if(context.state.boxes[i].props.value === name)
     {
-      if(boxes[i].props.inputProps.ischeck === 'false'){
-        boxes[i].props.inputProps.ischeck='true';
+
+
+      if(context.state.boxes[i].props.inputProps.ischeck === 'false'){
+        context.state.boxes[i].props.inputProps.ischeck='true';
       }
       else{
-        boxes[i].props.inputProps.ischeck='false';
+        context.state.boxes[i].props.inputProps.ischeck='false';
       }
+      var newIds = context.state.check.slice() //copy the array
+
+      newIds[i] = !newIds[i]; //execute the manipulations
+      console.log("yoo",newIds);
+      //context.state.check.length=0;
+      context.setState({check: newIds}); //set the new state
+      context.setState({flag:1});
+      //context.state.check[i]=1;
+      console.log("yoo",context.state.check);
       
     }
   }
