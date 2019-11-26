@@ -123,7 +123,7 @@ render(){
       this.state.boxes.length=0;
       this.state.items.length=0;
       console.log("+++++++++", this.state);
-      if(this.state.flag===0){
+
         console.log("obj",obj);
       for (const [index, value] of obj.entries()) {
         if(value.role === "student") {
@@ -132,7 +132,7 @@ render(){
           this.state.check.push(0);
         }
       }
-    }
+    
 
       return (
         
