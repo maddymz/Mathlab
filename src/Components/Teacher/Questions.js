@@ -1,20 +1,30 @@
 import React, {Component} from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import style from 'material-ui/styles';
 import './Teacher.css';
 import {Link} from 'react-router-dom';
 import './Teacher.css';
 import Header from '../Header/Header';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
 import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import TextField from 'material-ui/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import axios from "axios"
 import data from '../../Assets/users.json'
 
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
- * @since : 20 Nov, 2019
+ * @since : 24 Nov, 2019
  * @version : 1.0
  */
 
+// const theme = createMuiTheme({
+//   typography: {
+//     useNextVariants: true
+//   }
+// });
 class Questions extends Component{
     constructor(props) {
         super(props);
@@ -25,30 +35,112 @@ class Questions extends Component{
 		this.state = {
 			message: headerMessage,
 		//	username: this.props.location.state.username
-		}
     }
-    StartQuizPage() {
-        console.log(" inside Question page !!");
-        
-        this.props.history.push('/Teacher/StartQuiz', this.state)
-        
+    this.state = {
+      Question: "",
+      Option1:"",
+      Option2:"",
+      Option3:"",
+      Option4:"",
+      Answer: "",
+      Grade: "",
+      error: "",
+      Quizno: ""
+    };
+
+    this.reset = this.reset.bind(this);
     }
+
+    reset() {
+      this.setState({Question: ""});
+      
+      this.setState({Answer: ""});
+      this.setState({Grade: ""});
+      this.setState({error: ""});
+      this.setState({Quizno: ""});
+
+   
+   }
+   
     
     sendMessage () {
         this.props.setHeaderMessage("Lets start the quiz!");
     }
+
+
+    AddQuestion() {
+
+      var Question = this.state.Question;
+      
+      var Answer = this.state.Answer;
+      var Grade = this.state.Grade
+      var error = this.state.error
+      var Quizno = this.state.Quizno;
+  
+      var Question =  {
+        Question,
+        Answer,
+        Grade,
+        Quizno,
+      }
+      if (Question === "") {
+        alert("Please fill Question")
+      return;
+      }
+       if (Answer === "") {
+        alert("Please fill Answer")
+      return;
+      }
+  
+      
+         if (Quizno === "") {
+          alert("Please fill Quizno")
+      return;
+        }
+          
+        if(Grade === "") {
+          alert("Please select grade")
+      return;
+        }
+        if(error != "") {
+          alert("Please update everyfield")
+      return;
+        }
+  
+            axios
+        .post('http://localhost:3001/createquiz', Question)
+        .then(() => {alert("Succesfully added question")
+        this.props.history.goBack()})
+        .catch(err => {
+          console.error(err);
+          alert("Question Already exists")
+        });
+      }
     render(){
         return(
 
             <div>
             <MuiThemeProvider>
+            <form>
+              
               <div className='AddQuestion'>
-                <Header message="addQuestion" /> 
+                <Header message="addQuestion" />
+                <div style={style1}>
+                 
+               <TextField
+                  hintText="Enter Quizno"
+                  floatingLabelText="Quizno"
+                  value={this.state.Quizno}
+                  onChange={(event, newValue) => this.setState({ Quizno: event.target.value })}
+                />
+                </div> 
                <div style={style1}>
+                 
                <TextField
                   hintText="Enter Question"
                   floatingLabelText="Question"
-                  onChange={(event, newValue) => this.setState({ Question: newValue })}
+                  value={this.state.Question}
+                  onChange={(event, newValue) => this.setState({ Question: event.target.value })}
                 />
                 </div>
                 <br />
@@ -56,17 +148,46 @@ class Questions extends Component{
                 <TextField
                 hintText="Enter Answer for question"
                   floatingLabelText="Answer"
-                  onChange={(event, newValue) => this.setState({ Answer: newValue })}
+                  value={this.state.Answer}
+                  onChange={(event, newValue) => this.setState({ Answer: event.target.value })}
                 />
                 </div>
+                <div style={style1}>
+                <TextField
+                hintText="Enter Student Grade for question"
+                  floatingLabelText="Grade"
+                  value={this.state.Grade}
+                  onChange={(event, newValue) => this.setState({ Grade: event.target.value })}
+                />
+                </div>
+                <div>
+          <RadioGroup row aria-label="Grade" name="Grade" style={{marginLeft:"20px"}}  value={this.state.Grade} 
+          onChange={(event, newValue) =>
+                    this.setState({ Grade: event.target.value })}>
+          {/* <FormControlLabel value="Option1" control={<Radio />} label="Option1" />
+          <FormControlLabel value="Option2" control={<Radio />} style={{marginLeft:"115px"}} label="Option2" />
+          <FormControlLabel value="Option3" control={<Radio />} style={{marginLeft:"115px"}} label="Option3" />
+          <FormControlLabel value="Option4" control={<Radio />} style={{marginLeft:"115px"}} label="Option4" /> */}
+
+          </RadioGroup>
+          </div> 
+        
                 <br />
                 <p style={style1}>To add more questions click on submit</p>
                 <div style={style1}>
-                <Link to = "/teacher/startquiz" >
-                        <RaisedButton label="Submit" primary={true} style={style} />
-                </Link>
+               
+               <Link to = "/Teacher/Questions" >
+                        <RaisedButton label="Submit" primary={true} style={style} onClick={event => this.AddQuestion(event)}/>
+                </Link> 
+                </div>
+                <div style={style1}>
+               
+               <Link to = "/Teacher/Questions" >
+                        <RaisedButton label="Reset" primary={true} style={style} onClick={event => this.reset(event)}/>
+                </Link> 
                 </div>
               </div>
+              </form>
             </MuiThemeProvider>
           </div>
         );
