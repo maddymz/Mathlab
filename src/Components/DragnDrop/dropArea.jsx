@@ -3,6 +3,8 @@ import { useDrop } from 'react-dnd'
 import ItemTypes from '../DragnDrop/draggableTypes'
 import Box from './box'
 import { renderComponent } from 'recompose'
+import Example, { addToItems } from '../Test/example'
+
 /**
  * @author: Madhukar Raj
  * @version: version 1.0
@@ -28,7 +30,7 @@ var boxes = [];
 export function clearBoxes() {
   console.log("bhwf")
   boxes = [];
-  showBox=false;  
+  showBox = false;
   renderComponent(DropArea);
 
 }
@@ -37,6 +39,7 @@ const DropArea = () => {
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: ItemTypes.BOX,
     drop(item) {
+      addToItems(item.name)
       boxName = item.name;
       showBox = true;
       boxes.push(<Box name={boxName} />)
@@ -55,10 +58,11 @@ const DropArea = () => {
     backgroundColor = 'darkkhaki'
   }
   return (
-    <div ref={drop} style={{ ...style, backgroundColor }}>
-      {showBox ? boxes.map((value, key) => {
+    <div ref={drop}>
+      <Example />
+      {/* {showBox ? boxes.map((value, key) => {
         return value
-      }) : (isActive ? 'Release to drop' : 'Drag a box here')}
+      }) : (isActive ? 'Release to drop' : 'Drag a box here')} */}
     </div>
   )
 }
