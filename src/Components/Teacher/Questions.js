@@ -173,10 +173,8 @@ class Questions extends Component{
                 <div style={style1}>
                
                <Link to = "/Teacher/Questions" >
-                        <RaisedButton label="Submit" primary={true} style={style} onClick={event => this.AddQuestion(event)}/>
+                        <RaisedButton label="Submit" primary={true} style={{margin:"10px 20px"}} onClick={event => this.AddQuestion(event)}/>
                 </Link> 
-                </div>
-                <div style={style1}>
                
                <Link to = "/Teacher/Questions" >
                         <RaisedButton label="Reset" primary={true} style={style} onClick={event => this.reset(event)}/>

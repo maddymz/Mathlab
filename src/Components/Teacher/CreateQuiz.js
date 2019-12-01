@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router-dom';
+import { ListItem } from '@material-ui/core';
+import ListItemText from '@material-ui/core/ListItemText';
+
 
 import './Teacher.css';
 // eslint-disable-next-line 
@@ -45,21 +48,80 @@ class CreateQuiz extends Component {
                 </div>
                 <MuiThemeProvider>
                     <div style={style1}>
-                    <p> Teacher Instructions </p>
-                    <p> 1.Each quiz has two questions </p>
-                    <p> 2.Each question carry 3 marks </p>
-                    <p> 3.This is Not time based quizzes</p>
-                    <p> 4.Questions are based on student level </p>
-                    Instructions to create Quiz 
-                    <p>1.To add questions please click on add</p>
-                    <p>2.Add question in the question field</p> 
-                    <p>3.Add answer in the answer field</p>
-                    <p>5.To go back please click on Quit </p>
+                <div style={{marginLeft:"600px" }}>
+                <h1>
+                <ListItem>
+                  <ListItemText
+                    
+                    primary="Information about quiz questions "
+                  />
+                </ListItem></h1>
+                    <ListItem>
+                  <ListItemText
+                    primary="1.Each quiz has two questions "
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemText
+                    primary="2.Each question carry 3 marks"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText
+                    primary="3.This is Not time based quizzes"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText
+                    primary="4.Questions are based on student level "
+                  />
+                </ListItem>
+                
+                <ListItem>
+                  <ListItemText
+                    
+                    primary="Instructions to create Quiz "
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText
+                    primary="1.To add questions please click on add"
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemText
+                    primary="2.Add question in the question field"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText
+                    primary="3.Add answer in the answer field"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText
+                    primary="5.To go back please click on Quit "
+                  />
+                </ListItem>
+
+                </div>
+                    <p>  </p>
+                    <p> </p>
+                    <p>  </p>
+                    <p> </p>
+                    <p> </p>
+                    
+                    <p></p>
+                    <p></p> 
+                    <p></p>
+                    <p></p>
                     </div>
-                    <div style={style1}>
+                    <div style={{marginLeft:"600px"}}>
                         <label>
                         <Link to = "/" >
-                        <RaisedButton label="Back" primary={true} style={style1}/>
+                        <RaisedButton label="Back" primary={true} style={{margin:"10px 20px"}}/>
                      </Link>
                      </label>
                     <label>
