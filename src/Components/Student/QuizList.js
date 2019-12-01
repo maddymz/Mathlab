@@ -4,11 +4,11 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import './Student.css';
-import data from '../../Assets/quizzes.json'
+import data from '../../Assets/Server/quizqus.json'
 
 /**
  * @author Sajith Thattazhi
- * @version 2.0
+ * @version 3.0
  */
 class QuizList extends Component {
     constructor(props) {
@@ -45,9 +45,9 @@ class QuizList extends Component {
                             return (
                                 <ListItem
                                     button
-                                    onClick={event => this.startQuiz(event, quiz.quizId)}
+                                    onClick={event => this.startQuiz(event, quiz.quiz.Quizno)}
                                 >
-                                    <ListItemText className="QuizList" primary={quiz.quizId} />
+                                    <ListItemText className="QuizList" primary={"Quiz " + quiz.quiz.Quizno} />
                                 </ListItem>
                             )
                         })}
