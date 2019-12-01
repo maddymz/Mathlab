@@ -5,7 +5,7 @@
         "password": "virajkhatri",
         "role": "student",
         "email": "vkhatri2@asu.edu",
-        "grade":"1"
+        "grade": "1"
     },
     {
         "username": "scheruk5",
@@ -13,22 +13,23 @@
         "password": "suryache",
         "role": "student",
         "email": "scheruk5@asu.edu",
-        "grade":"4"
-
+        "grade": "4"
     },
     {
         "username": "sajjtha",
         "name": "Sajjith Thattazhi",
         "password": "sajjith",
         "role": "student",
-        "email": "sajjtha@asu.edu"
+        "email": "sajjtha@asu.edu",
+        "grade": "1"
     },
     {
         "username": "madhura",
         "name": "Madhukar Raj",
         "password": "madhukar",
         "role": "student",
-        "email": "madhura@asu.edu"
+        "email": "madhura@asu.edu",
+        "grade": "1"
     },
     {
         "username": "mjfindler1",
@@ -63,5 +64,13 @@
         "password": "michaelfindler",
         "role": "teacher",
         "email": "mjfindler4@asu.edu"
+    },
+    {
+        "name": "test test1",
+        "username": "test12",
+        "password": "12345678v",
+        "role": "student",
+        "email": "gg",
+        "grade": "1"
     }
 ]

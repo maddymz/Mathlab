@@ -38,12 +38,8 @@ class Questions extends Component{
     }
     this.state = {
       Question: "",
-      Option1:"",
-      Option2:"",
-      Option3:"",
-      Option4:"",
       Answer: "",
-      Grade: "",
+      Points: "",
       error: "",
       Quizno: ""
     };
@@ -55,7 +51,7 @@ class Questions extends Component{
       this.setState({Question: ""});
       
       this.setState({Answer: ""});
-      this.setState({Grade: ""});
+      this.setState({Points: ""});
       this.setState({error: ""});
       this.setState({Quizno: ""});
 
@@ -73,14 +69,14 @@ class Questions extends Component{
       var Question = this.state.Question;
       
       var Answer = this.state.Answer;
-      var Grade = this.state.Grade
+      var Points = this.state.Points
       var error = this.state.error
       var Quizno = this.state.Quizno;
   
       var Question =  {
         Question,
         Answer,
-        Grade,
+        Points,
         Quizno,
       }
       if (Question === "") {
@@ -98,8 +94,8 @@ class Questions extends Component{
       return;
         }
           
-        if(Grade === "") {
-          alert("Please select grade")
+        if(Points === "") {
+          alert("Please select Points")
       return;
         }
         if(error != "") {
@@ -154,16 +150,16 @@ class Questions extends Component{
                 </div>
                 <div style={style1}>
                 <TextField
-                hintText="Enter Student Grade for question"
-                  floatingLabelText="Grade"
-                  value={this.state.Grade}
-                  onChange={(event, newValue) => this.setState({ Grade: event.target.value })}
+                hintText="Enter Student Points for question"
+                  floatingLabelText="Points"
+                  value={this.state.Points}
+                  onChange={(event, newValue) => this.setState({ Points: event.target.value })}
                 />
                 </div>
                 <div>
-          <RadioGroup row aria-label="Grade" name="Grade" style={{marginLeft:"20px"}}  value={this.state.Grade} 
+          <RadioGroup row aria-label="Points" name="Points" style={{marginLeft:"20px"}}  value={this.state.Points} 
           onChange={(event, newValue) =>
-                    this.setState({ Grade: event.target.value })}>
+                    this.setState({ Points: event.target.value })}>
           {/* <FormControlLabel value="Option1" control={<Radio />} label="Option1" />
           <FormControlLabel value="Option2" control={<Radio />} style={{marginLeft:"115px"}} label="Option2" />
           <FormControlLabel value="Option3" control={<Radio />} style={{marginLeft:"115px"}} label="Option3" />
