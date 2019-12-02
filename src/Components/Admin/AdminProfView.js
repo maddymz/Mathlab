@@ -155,7 +155,7 @@ class AdminProfView extends Component {
             </List>
             <Modal size= "mini" trigger={addButton} closeIcon style={{ display: "flex",alignItems: "center",  justifyContent: "center"}}>
               <Modal.Header className="ui center aligned" style={{backgroundColor: '#34deeb', color: 'white', alignItems: 'center'}}>
-                Add Student
+                Add Professor
               </Modal.Header>
               <Modal.Content>
                 <Modal.Description>
