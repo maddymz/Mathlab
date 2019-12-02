@@ -7,7 +7,7 @@ import Paper from 'material-ui/Paper';
 import './Student.css';
 import Header from '../Header/Header';
 import DragnDrop from '../DragnDrop/dragndrop';
-import data from '../../Assets/quizzes.json'
+import data from '../../Assets/Server/quizqus.json'
 import { Avatar } from 'material-ui';
 import { result, setExpression, clearResult } from '../DragnDrop/box'
 import { clearBoxes } from '../DragnDrop/dropArea';
@@ -21,11 +21,11 @@ class QuizQuestions extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: props.location.state.selectedID,
+            message: "Quiz " + props.location.state.selectedID,
             username: props.location.state.username,
             questions: [],
+            answers: [],
             currentQuestionNumber: 0,
-            submittable: false,
             validity: false,
             result: ''
         }
@@ -39,11 +39,10 @@ class QuizQuestions extends Component {
         var quizData = data;
 
         for (var i = 0; i < quizData.length; i++) {
-            var quiz = quizData[i];
-            if (quiz.quizId === this.props.location.state.selectedID) {
-                for (var j = 0; j < quiz.questions.length; j++) {
-                    this.state.questions.push(quiz.questions[j])
-                }
+            var quiz = quizData[i].quiz;
+            if (quiz.Quizno === this.props.location.state.selectedID) {
+                this.state.questions.push(quiz.Question);
+                this.state.answers.push(quiz.Answer);
             }
         }
     }
@@ -52,10 +51,6 @@ class QuizQuestions extends Component {
         if (this.state.currentQuestionNumber + 1 < this.state.questions.length) {
             this.state.currentQuestionNumber++;
             this.forceUpdate()
-
-            if (this.state.currentQuestionNumber + 1 === this.state.questions.length) {
-                this.setState({ submittable: true })
-            }
         }
         clearResult();
         setExpression('');
@@ -89,7 +84,7 @@ class QuizQuestions extends Component {
     }
 
     evaluate() {
-        if (this.state.questions[this.state.currentQuestionNumber].answer === String(result)) {
+        if (this.state.answers[this.state.currentQuestionNumber] === String(result)) {
             this.setState({ validity: true })
         } else {
             this.setState({ validity: false })
@@ -103,7 +98,7 @@ class QuizQuestions extends Component {
                 <MuiThemeProvider>
                     <Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
                     <div style={style}>
-                        {this.state.questions[this.state.currentQuestionNumber].question}
+                        {this.state.questions[this.state.currentQuestionNumber]}
                     </div>
                     <div>
                         <Paper style={stylePaper}>
@@ -121,7 +116,7 @@ class QuizQuestions extends Component {
                     </div>
                     <div >
                         {
-                            (!this.state.submittable)
+                            (!(this.state.currentQuestionNumber + 1 === this.state.questions.length))
                                 ?
                                 <RaisedButton
                                     label="Next"
