@@ -1,6 +1,8 @@
 import RaisedButton from 'material-ui/RaisedButton';
+import Avatar from '@material-ui/core/Avatar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
+import Card from 'material-ui/Card';
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './LoginScreen.css';
@@ -11,6 +13,8 @@ import { setUserData } from '../DragnDrop/dragndrop'
  * @version: 1.0
  * @author: Viraj Khatri
  * @version: 2.0
+ * @author: Madhukar Raj
+ * @version: 3.0
  */
 
 // Login Component
@@ -67,8 +71,13 @@ class Login extends Component {
     return (
       <div>
         <MuiThemeProvider>
+        <Header message="Welcome To MathLab" />
+        <div className="loginCard">
+        <Card>
+        <div className="loginLogo">
+        <Avatar alt="LoginImage" src={require('./login.jpg')}/>
+        </div>
           <div className='Login'>
-            <Header message="Login" />
             <TextField
               hintText="Enter your Username"
               floatingLabelText="Username"
@@ -84,6 +93,8 @@ class Login extends Component {
             <br />
             <RaisedButton label="Login" primary={true} style={style} onClick={(event) => this.handleClick(event)} />
           </div>
+          </Card>
+        </div>   
         </MuiThemeProvider>
       </div>
     );

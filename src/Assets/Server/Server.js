@@ -27,10 +27,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.post('/createquiz', function(req, res) {
 
-
+console.log("hi bhavana")
 let rawdata = fs.readFileSync('quizqus.json');
 let Questiondata = JSON.parse(rawdata);
-console.log(Questiondata)
+//console.log(Questiondata)
 
  for(var i=0; i<Questiondata.length;i++) {
  if(Questiondata[i].quiz.Question == req.body.Question){
@@ -43,6 +43,7 @@ console.log(Questiondata)
   	quiz: req.body
   }
   quizqus.push(newQuestion)
+  //console.log(quizqus)
   fs.writeFileSync('quizqus.json', JSON.stringify(quizqus));
 
     res.status(200).json({"message": " successfully added"})
@@ -58,13 +59,13 @@ let message = ""
 let rawdata = fs.readFileSync('quizqus.json');
 let Questiondata = JSON.parse(rawdata);
 // if(req.body.Question == "admin" && req.body.password == "admin") {
-//  res.status(200).json({"grade": "Admin"})
+//  res.status(200).json({"Points": "Admin"})
 //     return
 //   }
 
  for(var i=0; i<Questiondata.length;i++) {
  if(Questiondata[i].quiz.Question == req.body.Question && Questiondata[i].quiz.Answer == req.body.Answer){
-   res.status(200).json({"grade": Questiondata[i].Question.Grade})
+   res.status(200).json({"Points": Questiondata[i].Question.Points})
     return
 }
   

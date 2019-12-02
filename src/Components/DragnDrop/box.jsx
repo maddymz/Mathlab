@@ -14,7 +14,7 @@ import EvaluationLogic from './EvaluationLogic'
 
 const style = {
   border: '1px dashed gray',
-  backgroundColor: 'white',
+  backgroundColor: '#FF5733',
   padding: '0.5rem 1rem',
   marginRight: '1.5rem',
   marginBottom: '1.5rem',
