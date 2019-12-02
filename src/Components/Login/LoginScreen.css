@@ -1,3 +1,18 @@
 .Login {
     text-align: center;
 }
+
+.loginCard{
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+.loginLogo{
+    text-align: -webkit-center;
+}
+
+body{
+    background-image: url("./maths_background.jpg");
+}
