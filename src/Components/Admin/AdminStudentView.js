@@ -49,7 +49,8 @@ class AdminStudentView extends Component {
         username: this.state.username,
         password: this.state.password,
         role: "student",
-        email: this.state.email
+        email: this.state.email,
+        grade: this.state.grade
       };
       var flag=0;
       var obj = JSON.parse(JSON.stringify(this.state.data));
