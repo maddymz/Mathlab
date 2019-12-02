@@ -1,17 +1,20 @@
 'use strict'; 
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
+import TextField from '@material-ui/core/TextField';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, { Component } from 'react';
-import {Modal, Button, Header, Row, Col, Form} from 'semantic-ui-react';
+import {Modal, Header, Row, Col, Form} from 'semantic-ui-react';
 import Checkbox from '@material-ui/core/Checkbox';
 import HeaderBar from '../Header/Header';
-import axios from "axios"
+import axios from "axios";
+
 
 
 /**
@@ -184,46 +187,55 @@ render(){
               })}
               </List>
 
-              <Modal trigger={addButton} closeIcon>
-          <Modal.Header>
+              <Modal size= "mini" trigger={addButton} closeIcon style={{ display: "flex",alignItems: "center",  justifyContent: "center"}}>
+          <Modal.Header className="ui center aligned" style={{backgroundColor: '#34deeb', color: 'white', alignItems: 'center'}}>
 
             Add Student
           </Modal.Header>
           <Modal.Content>
           <Modal.Description>
           <form name = 'contact-form' onSubmit={this.handleSubmit}>
-            <label>
-              FirstName:
-              <input name="firstname" type="text" onChange={this.handleInputChange}  />
-            </label>
+          <TextField  required name="firstname" style = {{marginLeft:"60px"}} id="standard-basic" label="First Name" onChange={this.handleInputChange}/>
+          <br />
+          <TextField  style = {{marginLeft:"60px"}} required name="lastname" id="standard-basic" label="Last Name" onChange={this.handleInputChange}/>
             <br />
-            <label>
-              LastName:
-              <input name="lastname" type="text"  onChange={this.handleInputChange} />
-            </label>
             <br />
-            <label>
-              UserName:
-              <input name="username" type="text" onChange={this.handleInputChange} />
-            </label>
+            <TextField style = {{marginLeft:"60px"}} required name="username"  label="User Name" onChange={this.handleInputChange}/>
             <br />
-            <label>
-              Password:
-              <input name="password" type="text" onChange={this.handleInputChange} />
-            </label>
             <br />
-            <label>
-              Grade:
-              <input name="grade" type="text" onChange={this.handleInputChange} />
-            </label>
+            <TextField required
+          style = {{marginLeft:"60px"}} 
+            onChange={this.handleInputChange}         
+          label="Password"
+          name = "password"
+          type="password"
+          
+          margin="normal"
+        />
             <br />
-            <label>
-              Email:
-              <input name="email" type="text" onChange={this.handleInputChange} />
-            </label>
             <br />
-      
-            <input type="submit" value="Submit" />
+            <TextField style = {{marginLeft:"60px"}} required min="1" max="12" name="grade"  type="number" label="Grade" onChange={this.handleInputChange}/>
+            <br />
+            <br />
+            <TextField style = {{marginLeft:"60px"}} required  name="email"  type="email" label="Email address" onChange={this.handleInputChange}/>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            {/* <Button
+              primary
+              icon='checkmark'
+              labelPosition='right'
+              content='Submit'
+              style = {{marginLeft:"90px"}}
+              onClick = {this.handleSubmit}
+            /> */}
+            
+
+
+            <RaisedButton style = {{marginLeft:"90px"}} type="submit" label="submit" className="button-submit" primary={true} />
+
           </form>
     
             </Modal.Description>
