@@ -71,32 +71,43 @@ class AdminStudentView extends Component {
         role: "student",
         email:this.state.email
       };
-      students.push(myObj);
-      console.log(students);
-      localStorage.setItem('students', JSON.stringify(students));
-      alert("Successfully added Student");
-      // this.setState({data:students});
-      // var frm = document.getElementsByName('contact-form')[0];
-      // frm.reset();  // Reset all form data
-      // this.setState({flag:0});
-      // this.setState({items:[]});
-      // this.state.boxes.length=0;
-      // this.state.items.length=0;
-      // this.setState({check:[]});
-      axios
-        .post('http://localhost:3001/addStudent', students)
-        .then(() => { 
-          this.setState({data:students});
-        var frm = document.getElementsByName('contact-form')[0];
-        frm.reset();  // Reset all form data
-        this.setState({flag:0});
-        this.setState({items:[]});
-        this.state.boxes.length=0;
-        this.state.items.length=0;
-        this.setState({check:[]});})
-        .catch(err => {
-          console.error(err);
-        });
+      var flag=0;
+      for(var i=0;i<students.length;i++){
+          if(students[i].username===this.state.username){
+            flag = 1;
+          }
+      }
+      if(flag==0){
+        students.push(myObj);
+        console.log(students);
+        localStorage.setItem('students', JSON.stringify(students));
+        alert("Successfully added Student");
+        // this.setState({data:students});
+        // var frm = document.getElementsByName('contact-form')[0];
+        // frm.reset();  // Reset all form data
+        // this.setState({flag:0});
+        // this.setState({items:[]});
+        // this.state.boxes.length=0;
+        // this.state.items.length=0;
+        // this.setState({check:[]});
+        axios
+          .post('http://localhost:3001/addStudent', students)
+          .then(() => { 
+            this.setState({data:students});
+          var frm = document.getElementsByName('contact-form')[0];
+          frm.reset();  // Reset all form data
+          this.setState({flag:0});
+          this.setState({items:[]});
+          this.state.boxes.length=0;
+          this.state.items.length=0;
+          this.setState({check:[]});})
+          .catch(err => {
+            console.error(err);
+          });
+      }
+      else{
+        alert("Student already exists with same username");
+      }
   }
 
   handleInputChange(event) {
