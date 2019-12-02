@@ -36,8 +36,6 @@ class AdminStudentView extends Component {
   }
 
   componentWillMount(){
-    console.log('First this called');
-    console.log(this.state);
       var data = require('../../Assets/users.json');  
       localStorage.setItem('students', JSON.stringify(data));
       this.setState({boxes:[],data:data,check:[]});
@@ -54,8 +52,9 @@ class AdminStudentView extends Component {
         email: this.state.email
       };
       var flag=0;
-      for(var i=0;i<students.length;i++) {
-          if(students[i].username===this.state.username){
+      var obj = JSON.parse(JSON.stringify(this.state.data));
+      for(var i=0;i<obj.length;i++) {
+          if(obj[i].username === this.state.username){
             flag = 1;
           }
       }
@@ -66,7 +65,6 @@ class AdminStudentView extends Component {
         axios
         .post('http://localhost:3001/addStudent', students)
         .then(() => { 
-          
           this.setState({data:students});
           var frm = document.getElementsByName('contact-form')[0];
           frm.reset();  // Reset all form data
@@ -79,7 +77,7 @@ class AdminStudentView extends Component {
         });
       }
       else {
-        alert("Student already exists with same username");
+        alert("User already exists with same username");
       }
   }
 
@@ -87,7 +85,6 @@ class AdminStudentView extends Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    console.log(name);
     this.setState({
       [name]: value
     });
@@ -126,7 +123,7 @@ class AdminStudentView extends Component {
               {this.state.items.map((value, key) => {
                 this.state.boxes.push(<Checkbox
                   checked= {this.state.check[key]}
-                  onChange={handleChange(value.username, this.state.boxes,this)}
+                  onChange={handleChange(value.username,this)}
                   value={value.username} 
                   inputProps={{
                     'aria-label': 'uncontrolled-checkbox',
@@ -225,7 +222,8 @@ function Delete(context){
     });
 }
 
-const handleChange = (name,boxes,context) => event => {
+const handleChange = (name,context) => event => {
+  console.log(context.state.boxes);
   for(var i=0;i<context.state.boxes.length;i++)
   {
     if(context.state.boxes[i].props.value === name)

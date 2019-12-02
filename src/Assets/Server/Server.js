@@ -112,6 +112,18 @@ app.post('/deleteStudent', function(req, res) {
 
   });
 
+  app.post('/addProfessor', function(req, res) {
+    console.log(req.body);
+    fs.writeFileSync('./../users.json', JSON.stringify(req.body));
+
+  });
+
+app.post('/deleteProfessor', function(req, res) {
+    console.log(req.body);
+    fs.writeFileSync('./../users.json', JSON.stringify(req.body));
+
+  });
+
 app.listen(3001, () => {
   console.log('Server Listening on port 3001');
  
