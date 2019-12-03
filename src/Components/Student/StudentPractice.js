@@ -11,6 +11,7 @@ import { DndProvider } from 'react-dnd';
 import { validExpression, result, setValidExpression, setExpression, clearResult } from '../DragnDrop/box'
 import Avatar from '@material-ui/core/Avatar';
 import { clearBoxes } from '../DragnDrop/dropArea';
+import { clearCard } from '../Test/example'
 /**
  * @author: Sajith Thattazhi
  * @version: 1.0
@@ -53,6 +54,7 @@ class StudentPractice extends Component {
 		setExpression('');
 		clearResult();
 		clearBoxes();
+		clearCard();
 	}
 
 	setValidity(value) {
