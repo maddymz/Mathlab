@@ -116,7 +116,7 @@ class CreateQuiz extends Component {
                      </Link>
                      </label>
                     <label>
-                    <Link to = "/teacher/Questions" >
+                    <Link to = "/Teacher/Questions" >
                         <RaisedButton label="Add" primary={true} style={style1} onClick = {(event) => this.QuestionsPage()}/>
                      </Link>
                         </label>

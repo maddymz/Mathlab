@@ -8,4 +8,6 @@ body {
 #root {
     height: 100%;
     background-image: url("../src/Components/Login/login_bck .jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
