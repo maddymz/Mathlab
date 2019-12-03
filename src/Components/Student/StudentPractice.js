@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import './Student.css';
 import Header from '../Header/Header';
+import Example, { addToItems } from '../Test/example';
 import DragnDrop from '../DragnDrop/dragndrop';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
@@ -47,6 +48,7 @@ class StudentPractice extends Component {
 	}
 
 	clearDropArea() {
+		addToItems();
 		setValidExpression(false);
 		setExpression('');
 		clearResult();
