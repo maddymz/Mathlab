@@ -73,7 +73,7 @@ class Login extends Component {
         <MuiThemeProvider>
         <Header message="Welcome To MathLab" />
         <div className="loginCard">
-        <Card>
+        
         <div className="loginLogo">
         <Avatar alt="LoginImage" src={require('./login.jpg')}/>
         </div>
@@ -93,7 +93,7 @@ class Login extends Component {
             <br />
             <RaisedButton label="Login" primary={true} style={style} onClick={(event) => this.handleClick(event)} />
           </div>
-          </Card>
+          
         </div>   
         </MuiThemeProvider>
       </div>

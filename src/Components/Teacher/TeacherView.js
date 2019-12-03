@@ -38,6 +38,7 @@ class TeacherView extends Component {
             <div>
                 <MuiThemeProvider>
                     <div>
+                        
                     <Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
                         <p style={style1}>Want to Create Quiz?</p>
                         <br />
@@ -45,6 +46,7 @@ class TeacherView extends Component {
                             <RaisedButton label="Create Quiz" primary={true} style={style} onClick={(event) => this.sendMessage()} />
                         </div>
                         <br />
+                        
                     </div>
                 </MuiThemeProvider>
             </div>

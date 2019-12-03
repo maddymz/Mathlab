@@ -117,10 +117,12 @@ class Questions extends Component{
 
             <div>
             <MuiThemeProvider>
+             
             <form>
+            
               
               <div className='AddQuestion'>
-                <Header message="addQuestion" />
+                <Header message="AddQuestion" />
                 <div style={style1}>
                  
                <TextField
@@ -169,7 +171,6 @@ class Questions extends Component{
           </div> 
         
                 <br />
-                <p style={style1}>To add more questions click on submit</p>
                 <div style={style1}>
                
                <Link to = "/Teacher/Questions" >
@@ -181,7 +182,9 @@ class Questions extends Component{
                 </Link> 
                 </div>
               </div>
+              
               </form>
+              
             </MuiThemeProvider>
           </div>
         );

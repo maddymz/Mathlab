@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import './Teacher.css';
 // eslint-disable-next-line 
 import Header from '../Header/Header'
+import { white } from 'material-ui/styles/colors';
 /**
  * @author : Bhavana Vakkalagadda(bvakkala)
  * @since : 02 Nov, 2019
@@ -47,11 +48,11 @@ class CreateQuiz extends Component {
                 <Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
                 </div>
                 <MuiThemeProvider>
-                    <div style={style1}>
+                <div style={style1}>
                 <div style={{marginLeft:"600px" }}>
                 <h1>
                 <ListItem>
-                  <ListItemText
+                  <ListItemText color={white}
                     
                     primary="Information about quiz questions "
                   />
@@ -107,17 +108,7 @@ class CreateQuiz extends Component {
                 </ListItem>
 
                 </div>
-                    <p>  </p>
-                    <p> </p>
-                    <p>  </p>
-                    <p> </p>
-                    <p> </p>
-                    
-                    <p></p>
-                    <p></p> 
-                    <p></p>
-                    <p></p>
-                    </div>
+                  </div>
                     <div style={{marginLeft:"600px"}}>
                         <label>
                         <Link to = "/" >
@@ -130,6 +121,7 @@ class CreateQuiz extends Component {
                      </Link>
                         </label>
                     </div>
+                  
                 </MuiThemeProvider>
             </div>
 
