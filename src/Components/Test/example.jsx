@@ -3,7 +3,6 @@ import { useDrop } from 'react-dnd'
 import Card from './Card'
 import update from 'immutability-helper'
 import ItemTypes from './ItemTypes'
-import { renderComponent } from 'recompose'
 import { setExpression } from '../DragnDrop/box'
 
 const style = {
@@ -18,6 +17,9 @@ export function addToItems(value) {
     setCards(cards.concat({ id: ID, text: value }))
 }
 
+export function clearCard() {
+    setCards(cards = [])
+}
 
 export default function Container() {
     [cards, setCards] = useState(ITEMS)
