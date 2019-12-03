@@ -32,10 +32,22 @@ export function setValidExpression(value) {
 
 export function setExpression(value) {
   expression = value
+  evaluate()
 }
 
 export function clearResult() {
   result = '';
+}
+
+function evaluate() {
+  var logic = new EvaluationLogic();
+  var res = logic.evaluate(expression);
+  validExpression = !isNaN(res)
+  console.log(expression, res, validExpression);
+  result = null;
+  if (validExpression) {
+    result = res;
+  }
 }
 
 const renderBox = (name) => {
@@ -49,19 +61,10 @@ const Box = ({ name }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { name, type: ItemTypes.BOX },
     end: (item) => {
-      console.log("item", item)
-
       if (item) {
         renderBox(name)
-        var logic = new EvaluationLogic();
         expression = expression + item.name
-        var res = logic.evaluate(expression);
-        validExpression = !isNaN(res)
-        console.log(expression, res, validExpression);
-        result = null;
-        if (validExpression) {
-          result = res;
-        }
+        evaluate(item)
       }
     },
     collect: monitor => ({

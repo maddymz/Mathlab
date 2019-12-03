@@ -19,8 +19,7 @@ export default function Container() {
   if (grade == '1') {
     return (
       <div>
-        <div style={{ overflow: 'hidden', clear: 'both' }}>
-          <DropArea />
+        <div style={styleDiv3}>
           <div style={styleDiv1}>
             <div style={styleDiv2}>
               <Box name="1" />
@@ -45,6 +44,7 @@ export default function Container() {
               <Box name="-" />
             </div>
           </div>
+          <DropArea />
         </div>
       </div>
     )

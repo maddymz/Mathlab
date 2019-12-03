@@ -4,52 +4,25 @@ import Card from './Card'
 import update from 'immutability-helper'
 import ItemTypes from './ItemTypes'
 import { renderComponent } from 'recompose'
+import { setExpression } from '../DragnDrop/box'
+
 const style = {
     width: 400,
 }
 
-
-const ITEMS = [
-    // {
-    //     id: 1,
-    //     text: 'Write a cool JS library',
-    // },
-    // {
-    //     id: 2,
-    //     text: 'Make it generic enough',
-    // },
-    // {
-    //     id: 3,
-    //     text: 'Write README',
-    // },
-    // {
-    //     id: 4,
-    //     text: 'Create some examples',
-    // },
-    // {
-    //     id: 5,
-    //     text: 'Spam in Twitter and IRC to promote it',
-    // },
-    // {
-    //     id: 6,
-    //     text: '???',
-    // },
-]
-
+const ITEMS = []
+var cards, setCards;
 var ID = 0;
 export function addToItems(value) {
     ID = ID + 1
-    ITEMS.push({ id: ID, text: value });
-    console.log(ITEMS);
+    setCards(cards.concat({ id: ID, text: value }))
 }
 
 
 export default function Container() {
-    const [cards, setCards] = useState(ITEMS)
-    console.log(useState(ITEMS));
-
+    [cards, setCards] = useState(ITEMS)
+    const [temp, updateTemp] = useState([])
     const moveCard = (id, atIndex) => {
-        console.log('id', id, 'atIndex', atIndex)
         const { card, index } = findCard(id)
         setCards(
             update(cards, {
@@ -59,6 +32,11 @@ export default function Container() {
                 ],
             }),
         )
+        var temp = ''
+        for (var i = 0; i < cards.length; i++) {
+            temp = temp + cards[i].text
+        }
+        setExpression(temp)
     }
     const findCard = id => {
         const card = cards.filter(c => `${c.id}` === id)[0]
