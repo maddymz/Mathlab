@@ -1,4 +1,3 @@
-import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, { Component } from 'react';
@@ -34,15 +33,13 @@ class StudentQuiz extends Component {
 					<div>
 						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
 					</div>
-					<div>
-						<Paper style={style}>
-							<div>
-								Select a quiz:
+					<div style={style}>
+						<div>
+							Select a quiz:
 							</div>
-							<div>
-								<QuizList parentProps={this.props} />
-							</div>
-						</Paper>
+						<div>
+							<QuizList parentProps={this.props} />
+						</div>
 					</div>
 					<div>
 						<RaisedButton label="Back" primary={true} style={style} onClick={(event) => this.goBackToStudent()} />
