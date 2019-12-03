@@ -2,6 +2,7 @@ import React from 'react';
 import Box from './box';
 import DropArea from './dropArea';
 import { Grid } from '@material-ui/core';
+import Example from '../Test/example'
 /**
  * @author: Madhukar Raj
  * @version: 1.0
@@ -18,8 +19,7 @@ export default function Container() {
   if (grade == '1') {
     return (
       <div>
-        <div style={{ overflow: 'hidden', clear: 'both' }}>
-          <DropArea />
+        <div style={styleDiv3}>
           <div style={styleDiv1}>
             <div style={styleDiv2}>
               <Box name="1" />
@@ -44,6 +44,7 @@ export default function Container() {
               <Box name="-" />
             </div>
           </div>
+          <DropArea />
         </div>
       </div>
     )
@@ -51,8 +52,7 @@ export default function Container() {
   else {
     return (
       <div>
-        <div style={{ overflow: 'hidden', clear: 'both' }}>
-          <DropArea />
+        <div style={styleDiv3}>
           <div style={styleDiv1}>
             <div style={styleDiv2}>
               <Box name="1" />
@@ -83,10 +83,17 @@ export default function Container() {
               <Box name=")" />
             </div>
           </div>
+          <DropArea />
         </div>
       </div>
     )
   }
+}
+
+const styleDropArea = {
+  backgroundColor: 'blue',
+  width: '400px',
+  height: '400px',
 }
 
 const styleDiv2 = {
@@ -94,8 +101,11 @@ const styleDiv2 = {
   justifyContent: 'center'
 }
 
+const styleDiv3 = {
+  display: 'flex'
+}
+
 const styleDiv1 = {
   display: 'grid',
   justifyContent: 'center',
-  marginTop: '50px'
 }
