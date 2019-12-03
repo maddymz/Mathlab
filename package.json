@@ -3,18 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.5.2",
+    "@babel/runtime": "^7.0.0-beta.55",
+    "@material-ui/core": "^4.6.1",
+    "@types/react-bootstrap": "^0.32.20",
     "avatar": "^0.1.0",
     "axios": "^0.19.0",
+    "babel-preset-react-app": "^9.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "immutability-helper": "^3.0.1",
     "material-ui": "^0.20.2",
+    "morgan": "^1.9.1",
     "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-bootstrap-modal": "^4.2.0",
     "react-dnd": "^9.4.0",
     "react-dnd-html5-backend": "^9.4.0",
     "react-dom": "^16.9.0",
     "react-router": "^5.1.1",
     "react-router-dom": "^5.1.1",
     "react-scripts": "3.1.2",
-    "react-tap-event-plugin": "^3.0.3"
+    "react-tap-event-plugin": "^3.0.3",
+    "reactstrap": "^8.1.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.8"
   }
 }

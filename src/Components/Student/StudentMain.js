@@ -11,7 +11,7 @@ import './Student.css';
 class StudentMain extends Component {
 	constructor(props) {
 		super(props);
-		var headerMessage = "Welcome " + this.props.location.state;
+		var headerMessage = "Welcome " + this.props.location.state[0] + " (Grade: " + this.props.location.state[1] + ")";
 		this.state = {
 			message: headerMessage,
 			username: this.props.location.state
@@ -35,7 +35,7 @@ class StudentMain extends Component {
 			<div className="StudentMain">
 				<MuiThemeProvider>
 					<div>
-						<Header message={this.state.message} showLogoutButton = {true} parentProps={this.props} />
+						<Header message={this.state.message} showLogoutButton={true} parentProps={this.props} />
 						<label>
 							Would you like to take the Quiz?
 						</label>
