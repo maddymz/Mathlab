@@ -46,11 +46,11 @@ Navigate to src/Assets/Server/ and run the above command
 Runs the server to Handle all the API calls hit by the client
 
 ## Dev Team 
-* **Madhukar Raj**
-* **Viraj Khatri**
-* **Sajith Thattazhi**
-* **Surya Cherukuri**
-* **Bhavana Vakkalagadda**
+* **Madhukar Raj** - [Githubaccount](https://github.com/maddymz)
+* **Viraj Khatri** - [Githubaccount](https://github.com/VirajKhatri)
+* **Sajith Thattazhi** - [Githubaccount](https://github.com/thattazhi)
+* **Surya Cherukuri** - [Githubaccount](https://github.com/Surya-Cherukuri)
+* **Bhavana Vakkalagadda** - [Githubaccount](https://github.com/vbhavana)
 
 ## Future Work 
 
