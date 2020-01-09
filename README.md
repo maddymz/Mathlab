@@ -54,4 +54,4 @@ Runs the server to Handle all the API calls hit by the client
 
 ## Future Work 
 
-Current version supports very basic mathematical expressions as the target audience were 1st and 4th graders. Future version can have support for more complex mathematical expressions. Alos, User Interface will be improved in future versions.
+Current version supports very basic mathematical expressions as the target audience were 1st and 4th graders. Future version can have support for more complex mathematical expressions. Also, User Interface will be improved in future versions.
