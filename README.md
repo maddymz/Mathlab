@@ -1,10 +1,10 @@
-## SER 515 Fall 2019 - Scratch Knockoff for Maths
+## Scratch Knockoff for Maths
 
-This project is inteded for coursework.
+This is version 1.0.0 done as part of the coursework.
 
 ### Description 
 
-This is a small project and the objective is to develop a working product to help youngsters learn to form valid math expressions, which is inspired from SCRATCH (https://scratch.mit.edu/) program that visually teaches programming to middle schoolers. - to help youngsters learn to form valid math expressions. 
+This is a small project and the objective is to develop a working product to help kids learn to from valid math expressions, which is inspired from SCRATCH (https://scratch.mit.edu/) program that visually teaches programming to middle schoolers. - to help youngsters learn to form valid math expressions. 
 
 
 ## Technologies 
@@ -15,6 +15,12 @@ MaterialUI
 
 NodeJS
 
+ExpressJS
+
+## System Requirements
+```
+Please make sure that system has Node js installed 
+```
 ## Available Scripts 
 
 In the project directory, you can run:
@@ -39,32 +45,6 @@ Navigate to src/Assets/Server/ and run the above command
 
 Runs the server to Handle all the API calls hit by the client
 
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
 ## Dev Team 
 * **Madhukar Raj**
 * **Viraj Khatri**
@@ -72,3 +52,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 * **Surya Cherukuri**
 * **Bhavana Vakkalagadda**
 
+## Future Work 
+
+Current version supports very basic mathematical expressions as the target audience were 1st and 4th graders. Future version can have support for more complex mathematical expressions. Alos, User Interface will be improved in future versions.
