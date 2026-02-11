@@ -1,0 +1,20 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+RUN apk add --no-cache git
+
+COPY package.json ./
+RUN npm install --omit=dev --legacy-peer-deps
+
+COPY src/Assets/Server/Server.js ./src/Assets/Server/Server.js
+COPY src/Assets/users.json ./src/Assets/users.json
+COPY src/Assets/Server/quizqus.json ./src/Assets/Server/quizqus.json
+
+# Server.js uses relative paths: reads 'quizqus.json' and '../users.json'
+# so the working directory must be src/Assets/Server/
+WORKDIR /app/src/Assets/Server
+
+EXPOSE 3001
+
+CMD ["node", "Server.js"]
