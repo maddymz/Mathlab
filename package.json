@@ -13,7 +13,7 @@
     "express": "^4.17.1",
     "immutability-helper": "^3.0.1",
     "material-ui": "^0.20.2",
-    "morgan": "^1.9.1",
+    "morgan": "^1.10.1",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-bootstrap-modal": "^4.2.0",
